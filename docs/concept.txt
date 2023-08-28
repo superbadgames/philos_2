@@ -11,8 +11,25 @@ The war for the remaining 2 worlds continues on...
 You are a miner, working in a field of rocks far far away from any kind of combat. You have been to both of the Garden Worlds, but circumstance or desire lead you, like so many others, to the stars where you families lived for so long.
 
 Your job is simple. Keep the drones mining. Find and mark rocks for the drones to mine. Protect the drones from any Pirate or Empire Accord attacks. Protect the base at all costs, and keep the ore flowing.
+# Places
+Octet Prime: Home world of the Empire Accords
 
-# Empire Accord: 
+# Events
+## The Arrival
+
+When the Empire Accord first arrived in the system, the Gardeners were completely unprepared. Many stations fell before it become clear what was happening. 
+
+It took so long for their people to make their slow way through the stars to get to these Garden Worlds. They didn't think they would ever seen another human being again. 
+
+The Empire Accord created the Gateways at great cost to them. They had completely forgotten about the generation ships, the flotilla that they sent out there to claim those worlds. 
+
+When they sent their scouts, the reports were almost too good to believe. Of all the worlds that had been found, none showed so much promise as these lush worlds. The raw materials alone would fuel a new wave of invention. After the planet was stripped, it could be turned into a farm that could feed the entire Empire Accord, and they would be the only ones who controlled it! 
+
+The Empire accord insists that they own the rights to the planets. They commissioned the ships, and so they own all the claims. 
+
+The Gardeners didn't sign any such papers. The contract that they had for the ships says that they owned the ships. In returned, many generations were sold into bondage. Many volunteered to stay behind so that others could have a hope at a better world, a better life. This sacrifice was forgotten by the Accord, but not by the Gardeners. 
+# Factions
+## Empire Accord: 
 
 This is not just a simple kingdom. 
 
@@ -24,7 +41,68 @@ The wheels of progress wont be stopped. As the generations past, and the Gardene
 
 And they want their profits...
 
-# The Gardeners:
+Greed. All that the Accord cares about it getting more. When they arrived in the Gardens, all they saw was potential. They just wanted to suck the place dry. 
+
+The Accord is ruled by a Supreme Officer. He has authority to define much of the policy for the territories that they control, which are vast and always expanding. 
+
+Each new Supreme Officer is chosen by the previous. It is a life long calling, that only ends in death. There are often assassinations attempts, some of which are successful. 
+
+The Super Officer is not the sole dictator of the Accords. The Officer reports to the Board of Trustees, which are essentially elected officially. They work directly with local Governors, who in turn organize a group of Directors, who have teams that answer to them, and teams that answer to them, all the way down to the individual citizen of the Accord.
+
+## A Brief history of the Empire Accords
+The current year is 35,892 C.E. 
+
+The early history of man is largely unknown. Much more has been lost to time than has been kept. Here is what is known. 
+
+In the Beginning, Human was made of Earth. From Earth Human came, and in Earth Human must live. Of the dust comes all that Human needs for nourishment and life. 
+
+Out into the vast cosmos Human gazed, always searching for more Earth to have and to keep. For it is from Earth that seeds can grow and food can flourish. Herds thrive, trees purify precious sweet O2. 
+
+Harmony of Environment produces maximum profits.
+
+The first known history of the Accords begins on Octet Prime. It is here that a group of Humans had lived long enough to not remember which stars they came from. In those days, the only way to travel through the cosmos was in vast generation ships. It took more time to travel through the stars then the memories of Human could endure. For this reason, when Human reach Octet Prime, they stopped searching the stars, and decided to let their ships be in orbit. 
+
+For a few generations, all was happy. People forgot the stars, they forgot the great fatigue they felt at having wandered so long. They settled down. 
+
+Time passed. Politics changes. Democracy was rejected, and Empires rose. These in turn fell to merchant classes, which in turn lead a new kind of democracy, one in which votes were cast in money. 
+
+The merchant class grew strong, and great corporations were created. These began to grow more powerful than the Empires, and soon, war was declared. Sides were chosen. Some went to the Empires, and the heritage they felt they owed to the kings and emperors who had ruled them since the stars. A few fled back to the ships orbiting Octet Prime, and decided to go find a new way to live.  
+
+As the war dragged on, and became more and more destructive, it was clear that for peace to last, an Accord would have to be made. The Empires would have to make peace with the Corporations. The Empire Accord was formed. A Board of Trustees was established to represent the interests of the business. Human Resourcers took the charge of organizing a labor force, and to seeing to their needs. The Board appointed the first Supreme Officer. The Great Emperor of Kings, the leader chosen by the last of the empires and kingdom in the war against the corporations was chosen for this venerated position. He was given the power to see that the interests of the old regime would still be seen to. 
+
+Over time, the Supreme Officers learned that the interests of the Corporation and the Empire are one and the same. Laborers learned to navigate the new social political structure of a world ruled by a corporation. 
+
+Science and Industry soared. Advanced were made in propulsion, and new classes of weapons were create that could devastate. 
+
+But Octet Prime was only one small world. It couldn't sustain the load that was put on it by the Accord. They were running out of metals and resource. The Harmony of the Environment was lost, and the world began to crumble. They knew they had to find more worlds than one to achieve their true dreams. 
+
+Back to the ships, they began building outposts in the system of Octet. Labs were set up. A singularity was studied, and a breakthrough was found. 
+
+A method was create that would allow gateways to be opened at any coordinate that they could identify. No longer would the Accord be limited by the slow speed of light. Now they could traverse the great cosmos at will!
+
+Gateways were opened to many systems. Riches again began to pour in. Old colonies were sought after, and claimed by the Accord, rightfully. 
+
+A golden age of Human has been established. Long live the Supreme Officer! Long Live the Board!
+
+## The Truth
+
+It's a mess. A hellish mix of feudalism and capitalism. The Supreme Officer is no better than a king, and the Board is useless, like the Senate of Rome. People are helplessly abused by their government, but far too many of them buy in to do anything about it. They see it as the way to make progress, as the only logical way for Humans to progress. 
+
+They feel like they own everything because they can see it and they can reach for it. 
+
+The Gardeners are very different than the Accord in this respect. They believe in almost worshiping the Harmony of Nature. They don't see the world as something to be used, but as something the be protected and preserved. They look at it as their duty to make sure that the Gardens are made safe from the abuses of the Accord, or any other creature or virus that would corrupt their beauty.
+
+## Pirates!
+
+The Empire Accord puts out contacts to ships located in the various system they control for ships of war to engage in pirate activities. As part of the war efforts in the so called "Garden" System, they have contracted to send groups of war ships to raid the Harvesting stations of the Gardener's. 
+
+These stations are mostly unprotected. Fleets of drones harvest ore from nearby asteroids, usually with one or more so called "Shepherd" guarding and maintaining the stations and their drone fleets. 
+
+Be warned! The Shepherds are not the be trifled with! Their ships are deadly and fast. With some sort of advanced scanning or warning system, they will know you are there before you do. They will come out of no where, and they will strike with deadly force to protect their drones and their ore. 
+
+ 
+
+## The Gardeners:
 
 These are the people who settled the garden worlds. They don't even live on the garden worlds. 
 
@@ -44,30 +122,59 @@ They know how to tune engines, how to re-enforce a hull, or how to handle an env
 The Empire Accord has the industry of trillions behind them, and they have been busy. The Department of R&D has spent countless lives developing weapons of great power. When the Gardeners first faced the Accord, they were stunned by the sheer power of their weapons. It felt to them as if they had wasted all of their efforts. The first few battles went overwhelmingly in favor of the Accord. 
 
 Later, after the Burning of the First World, the Gardeners became more clever, more ruthless. They started to learn how to strip weapons from captures enemy ships, and they learned how to adapt to the new technology. Better defenses were created, and the Accord no longer had an edge over the Gardeners. 
-
-# The Arrival
-
-When the Empire Accord first arrived in the system, the Gardeners were completely unprepared. Many stations fell before it become clear what was happening. 
-
-It took so long for their people to make their slow way through the stars to get to these Garden Worlds. They didn't think they would ever seen another human being again. 
-
-The Empire Accord created the Gateways at great cost to them. They had completely forgotten about the generation ships, the flotilla that they sent out there to claim those worlds. 
-
-When they sent their scouts, the reports were almost too good to believe. Of all the worlds that had been found, none showed so much promise as these lush worlds. The raw materials alone would fuel a new wave of invention. After the planet was stripped, it could be turned into a farm that could feed the entire Empire Accord, and they would be the only ones who controlled it! 
-
-The Empire accord insists that they own the rights to the planets. They commissioned the ships, and so they own all the claims. 
-
-The Gardeners didn't sign any such papers. The contract that they had for the ships says that they owned the ships. In returned, many generations were sold into bondage. Many volunteered to stay behind so that others could have a hope at a better world, a better life. This sacrifice was forgotten by the Accord, but not by the Gardeners. 
-
-# Drones
+## Drones
 
 Mining raw ore is as important as always. Even though the Gardeners know the planets they tend are full of resources, they will not mine them. The planet is sacred to them. It is not to be touched. 
 
-Great herds of drones swarm through asteroid fields, searching for ore, ice, and scrap to salvage. So called ranchers or herders live in stations on the border of the fields. They fly a craft through the rocks looking for drones that need repairs, tagging valuables to be harvested, and fending off any pirates that seek to main the drones, or take their hauls. 
+Great herds of drones swarm through asteroid fields, searching for ore, ice, and scrap to salvage. So called ranchers or herders live in stations on the border of the fields. They fly a craft through the rocks looking for drones that need repairs, tagging valuables to be harvested, and fending off any pirates that seek to main the drones, or take their hauls.
+
+## Factory ships
+
+Any advanced civilization needs to have industry. Ships are going to break, so parts need to be manufactured. The main difference between the Gardeners and the Empire Accord is how they view nature in terms of their manufacturing. 
+
+The Empire Accord builds factories on world. They build great elevators on the surface of a planet. At the top of the elevator, in orbit around the planet is a great platform that is used as a shipping dock. Space worthy vessels dock at the platform to drop off ore, and pick up manufactured goods. 
+
+Other planets or moons will have factories built for ships, weapons and other industries. The Empire Accord opens Gateways to new worlds to expand their needs. 
+
+Gardeners, on the other hand, believe that preserve the beauty and nature of Earth is as important, if not more important than their industry. In order to preserve the beauty of their Gardens, mining of resources and ore on any Earth is forbidden. Farming is allowed, but only minimally, and much tireless effort is put into making sure that their agriculture doesn't impact the environment in any negative way. 
+
+Manufacturing is done on great space worthy ships. These Factory Ships go around to asteroid fields and comets and collect ore from Harvesting Stations (more on these later). 
+
+These Factory Ships don't travel alone, but in great fleets. One ship will be dedicated to refining and processing ore. Another ship will be used to assemble raw materials needed to create more complex goods and parts. These are in turn sent to great Factory ships. These huge ships are always being added onto. Each Factory ships begins with a single specialty, ore refining. From there, the Factory Ships can be upgraded to have factories for everything from the raw materials and parts needed to assemble ships and drones, to the factories required to produce them too. 
+
+The biggest most advanced Factory Ships can even product new Factory ships, to speed up manufacturing further. This is how th Gardener create vast swarms of drones to do the harvesting work needed to provide the ore without blemishing Earth. 
+
+## Harvest Stations
+
+The Gardeners refuse to harvest ore from their worlds. They don't want to blemish and pillage the beauty of nature that they have found on the Earth that they have chosen. They want to protect this beauty, as a home for their children so that they don't have to wander through the stars any longer. 
+
+In order to still function as a space faring people, an alternative source of ore must be found. Scattered around the Asteroid belts found in the system (there are 2, an outer and inner belt) are stations that are set up in an orbit with the belt, in close enough proximity of some asteroids to reasonably mine them. 
+
+The stations are outfitted with a drone factory, which can be upgraded with the help of Factory Ships. 
+
+A lone human will watch over the station. Their job is to protect and maintain the drones, keep the station operational, identify and tag asteroids for harvest and keep ore flowing for the Factory Ships to pick up every cycle.  
 
 # The Game
 
+## Player Role
 You are not involved in this war. You wont even see a battle. You are a humble drone rancher. Your sole purpose is to keep the ore flowing to the station. It is used by great battle fleets to create armies of attack drones that are thrown at the great ships of the Empire Accord. The ships of the Gardeners are factories that produce ships during battle, as long as they have the raw ore needed to create the fleets of drones. 
 
 You are just the rancher. You just keep the drones happy. 
 
+## Gameplay Loop
+
+Periodically, Factory Fleets come through to collect ore. If you don't provide them with enough ore, they will lose the war against the Empire Accord, and the Earth that the Gardeners are fighting to protect will be pillaged for profits. 
+
+You pilot a small, one person ship. Your job is to keep the Harvest Station up and running. 
+
+## The Asteroid Belt
+
+I'm honestly a little torn here about how I want this project to be. I'm not sure what kind of game I really want to make here. 
+
+On the one hand... In real life, in the reality of the universe that we live in, the belt is VERY dispersed. Without careful aiming, and knowing exactly where you are going, you wont even see a single Asteroid. That being said, there are more than 100k known in our solar system. That is a lot of rock to harvest. 
+
+It's not like it is in star wars. The asteroids aren't moving around wildly, where ships could dash between the rocks. That is all very exciting. I could make a world like that, but that is not real. It is not how things really work. 
+
+What if this game was about finding the asteroids. Maybe you have a scanner that helps you identify them, then you have to aim your ship, and fire 2 burns. The first to get you half way to your destination or so, and the second to slow you down, so that you can see what an asteroid is made of. If it's what you want, you tag it for the drones. Also, you set up beacons to scan ships coming within range of your find. This is where Pirates of the Accord will strike. If they are spotted, you have to act fast to save the drones, and the ore. The Factor ships need the ore!
+
+But what will space look like in a world like this? How can the travel be fun? What is the combat like? There is so much I don't know. 
