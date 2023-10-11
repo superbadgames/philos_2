@@ -1,0 +1,25 @@
+{
+    "cSpell.words": [
+        "opengl"
+    ],
+    "cSpell.ignoreWords": [
+        "g",
+        "get",
+        "gl",
+        "lenum",
+        "lfloat",
+        "luint",
+        "programiv"
+    ],
+    "files.associations": {
+        "compare": "cpp",
+        "memory": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "xmemory": "cpp",
+        "xtr1common": "cpp",
+        "xutility": "cpp",
+        "xiosbase": "cpp"
+    }
+}
