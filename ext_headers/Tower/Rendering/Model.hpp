@@ -25,6 +25,8 @@ namespace Tower
 
         void LoadFromFile(const string& filepath, p_Shader shader);
 
+        void LoadFromFileWithTexture(const string& modelFilepath, const string& textureFilepath, p_Shader shader);
+
         void Draw(const glm::mat4& viewMatrix, const glm::mat4& entityMatrix);
 
         void EnableWireframeMode(void);

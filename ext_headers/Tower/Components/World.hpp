@@ -3,6 +3,8 @@
 #include "pch.h"
 #include "Tower/framework.h"
 #include "Tower/Managers/Director.hpp"
+#include "Tower/Object.hpp"
+#include "Tower/Entity.hpp"
 #include "Tower/Rendering/Camera.hpp"
 #include <vector>
 
@@ -27,8 +29,15 @@ namespace Tower
             _entities = entities;
         }
 
+        inline void SetObjects(std::vector<p_Object> objects)
+        {
+            _objects.clear();
+            _objects = objects;
+        }
+
     protected:
         p_Entity _human;
+        std::vector<p_Object> _objects;
         std::vector<p_Entity> _entities;
         p_Camera _camera;
 
