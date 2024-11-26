@@ -1,22 +1,27 @@
-=1=
+# 1
 
-1
+## 1
 What is the game that you have been thinking about creating that inspired you to read this book?
 
-
+A: I am thinking about Philos 1. This is a game about a Flotilla of Generation ships heading towards a new solar system as quickly as they can, which isn't very fast. They are looking at a 1,000 year journey, and they are just 250 years in. 
 
 What objective would you like to meet by launching your indie game?
 
+A: There are many objectives that I want to achieve this this. 
+	- Finish a game
+	- Finish the game engine
+	- Learn how to create 3d art
+	- Learn how to create music and audio
+	- Learning how to pull a whole project together
 
-
-
-2
+## 2
 What makes you passionate about this game?
 
+A: I think this is a very good idea. I am ready to make a game. I have spent far too long just waiting around, hoping that some day I'll just have a game without having to put in all the work. This is going to be tough, but I'm ready for it. I'm ready to show myself that I can do this.   
 
 In what game genre or category will reviewers classify it?
 
-
+A: 
 
 When did you first become interested in the play style, genre, category or theme that lies at the core of the game you want to create?
 

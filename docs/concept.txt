@@ -178,3 +178,101 @@ It's not like it is in star wars. The asteroids aren't moving around wildly, whe
 What if this game was about finding the asteroids. Maybe you have a scanner that helps you identify them, then you have to aim your ship, and fire 2 burns. The first to get you half way to your destination or so, and the second to slow you down, so that you can see what an asteroid is made of. If it's what you want, you tag it for the drones. Also, you set up beacons to scan ships coming within range of your find. This is where Pirates of the Accord will strike. If they are spotted, you have to act fast to save the drones, and the ore. The Factor ships need the ore!
 
 But what will space look like in a world like this? How can the travel be fun? What is the combat like? There is so much I don't know. 
+
+# A Day In The Life...
+
+Character: J'Lor (pronounced Jay-Lor)
+Male
+26 years old (by old Earth reckoning)
+
+J'Lor has lived in the fields his whole life.  He was born and raised on a habitat that had been in the family for 2 generations. It was a cozy home for him and his 3 brothers, but they made it work. 
+
+Being is space is as natural to J'Lor as it is to any of the Gardeners. They learn how to navigate zero G as children. Regular trips planet side ensured that J'Lor's bones would grow naturally, and helped him to have an appreciation for the planets that they have found and cultivated. 
+
+J'Lor's family moved around every few years. The habitat itself can't move, but they can hit a tow from fleets that pass by regularly. Moving to another planet was not a big deal to J'Lor, since most of the friends he had moved around too, so they learned to rely on the net to keep in touch. 
+
+The family spent their time herding drones. The function of these drones changes from season to season. Only some of the drones actually belong to the family. Fleets would come and put drones in the charge of the family for a period of time, then come back and collect the drones, along with any resources they harvested, or data they gathered while they patrolled. If the drones get into any danger, the family has a squadron of snub ships that can defend them. If they are damaged or break down, the family has the know how to fix the drones in the fields, and keep them doing their job. They are Shepherds. 
+
+Once J'Lor reached the age of 10, he was taught how to fly his own snub fighter. At first, it's power was restricted so that he had to stay around the habitat, or he would lose power and drift until a drone, or someone else picked him up. He was a natural pilot. By the age of 12, he could out race, and out fly anyone in his family, except his dad. 
+
+J'Lor was 18 when he was sent away to a university fleet to study. For 5 years, he worked on the fleet and learned the craft of drone repair and ship repair and manufacture. His hope was to take over the family herd, and learn how to improve their ships, and maybe even build fleets of drones to herd the drones. Drones herding drones... it was his big dream. He was sure that this job could be automated, and that through this automation, J'Lor would be freed up to explore the stars and see everything that there was to see. J'Lor found great joy in flying to new, uncharted quadrants of space. More than anything, J'Lor wanted to become an explorer and find great new expanses of mineral and resources. 
+
+When J'Lor was still away at school, at the age of 21, his mom passed away. She got sick, and died suddenly. He left school to attend the funeral. After the funeral, J'Lor was worried about his father, so he stayed on to help out. 
+
+6 months later, his dad died. Everyone knew it was of a broken heart. He was left with the herd he always wanted. He convinced his brothers to watch the herd while he finished his degree. He was done by the age of 25, and took over the herd full time. 
+
+J'Lor has been in charger of the herd for 9 months now, is 26 years old, and has no idea what to do next. 
+
+This year, his herd is mid sized. He has 4 mining drones, 3 research drones, and 2 repair drones. They cover an area roughly 10ku in size. 
+
+With some of the money J'Lor had in savings, he ordered a new drone to set up as a security enforcer. He outfitted the drone with a basic cannon, and a basic shield. It's thruster are a problem, and need to be upgraded, so it's a little slow for now. The AI package is pretty simple too. It can only attack targets that J'Lor assigns to it... but that too can be upgraded in time. 
+
+So far, his idea is actually working out. J'Lor is convinced that if the Security drone works out, that the repair drones can also be further automated. Maybe the Security and repair drones could be combined into a single chaise! This would bring J'Lor one step closer to being free to explore while his habitat produced resources on it's own!
+
+All of this was going very well for J'Lor... Until the Arrival happened. His habitat had been set up a certain field for about 3 weeks. So far, the drones were all humming along. First thing in the morning, one of the mining drones went down. There was no indication why. He loaded up his snub, and headed out to see what was up. He took the Security drone with him, and figured maybe he could do some testing while he was out in the field. 
+
+At the coordinates of the broken drone, he found nothing but wreckage. Whatever had damaged the drone had done so fatally. The drone was completely destroyed. This was a big problem. Losing a drone meant that he would have to replace it. Then another drone went offline. This time one of the research drones. 
+
+J'Lor hurried to the drone, but was again too late. The wreckage was still hot. He got an alert that another mining drone was under attack nearby. He hurried to the drone and found it under attack. The ship was unlike any he had ever seen.
+
+Targeting the ship, J'Lor sent the Security drone to attack while he maneuvered to flank the attack from above. The drone engaged, and while it was getting some shots in good, it was clear that the drone would never survive the attack. J'Lor hit the afterburner and swept down for the attack. The ship didn't see him coming was destroyed. But then J'Lor took fire from the side, and was disabled. The last sound J'Lor heard was an alarm notifying him that not only were more drones falling, the habitat was under attack. 
+
+# Free write sessions
+
+These are sessions where I don't know what to write about, but I need to be creative. I need to create, so I am going to write for 20 minutes about this world, and see what I can come up with. 
+
+## Sessions 1
+
+4396
+5208
+812 words
+20 mins
+
+In the stars, the Gardeners, as they became called, developed some of the most advanced AI. They were on a ship, and they had nothing else to do but learn. So, many people became engineers. These engineers learned more about AI than any group before them, because they could focus on those problems. 
+
+Weapons were also developed. Out between the stars, weapons testing is very very easy. The problem is finding raw materials to test with. They can't just buy or mine stuff. The ships can never stop. But... the flotilla has many factory ships. It was known that they would need to maintain themselves by the Ancestors, so they prepared everything they would need to create and fabricate any part of the any ship, and to create new ships and new technology. They knew that a whole civilization would have to develop around this concept, and that for generations there would be some people who's whole job was in manufacturing.
+
+So, the engineers are working and create advanced AI. This AI can then control the manufacturing sections of the ship. Because ship populations are controlled, to avoid over or under breeding, people don't have to compete for resources. It's more about keeping the resources that are available, and looking for ways to extend everything. 
+
+It was known that over time, they would need to "refuel". This would mean taking on large quantities of metal ores, gases and liquids. These would have to be processed in the factories, and turned into parts and fuels for the ships, which could then be refitted, fixed and etc. 
+
+Additionally, great factory ships could manufacture new ships. New engines, with speeds and forces so great, no human could live through it. The AI was called on to control a Drone for the first time. This drone, massive in size and scale, was sent off at great speeds to a near by asteroid. It harvested much needed materials, while maintaining a connection to the flotilla, and it's primary AI. It gathered everything that was needed in real time, and rushed back. Zoom zoom, everything worked out great. More drones were created, and then problems started to arise. 
+
+Drone repair quickly became drone shepherding. As time was slow out in the stars, by this time new methods of absorbing huge forces of gravity caused by thrust were invented. Faster and faster ships were being created. Fields that could dampen the gravity force caused by thrust were created, allowing ships to begin to travel faster and faster. 
+
+Drone Shepherds would board extremely fast ships and zip out to stranded drones to repair them when problems arose. Repairing these drones involved going deep inside the huge workings of the machines and fixing whatever the malfunction was. The Shepherd would doc with the Drone, and set up a hab where they could rest and cook between shifts working on the drone. 
+
+When the drone was fully repaired, the shepherd would close done the hab, and return back to the fleet, leaving the drone to its gathering. 
+
+In this way, the fleet made better time then expected. In addition to this, the fleet never lacked for resources. With a constant stream of drones going all over the space around them, the flotilla factories could create everything they needed from space, without needing to ground themselves. 
+
+Thus, when they reached their perfect planets, they wanted to save the beauty of them, and not consume them for resources. Asteroids and moons around nearby planets could supply them with everything they needed. 
+
+The flotilla was changed once the journey was finished. What was once a very mobile fleet became a series of stationary systems of station platforms. These platforms grew into great networks, with the same technology used to create anti gravity fields supplying the platforms with artificial gravity fields, and protective anti contact fields to repel meteorites and the like.
+
+Because the flotilla needed to have travel between the ships, a great fleet of smaller transport ships were developed. These would ferry people, supplies and other cargo between ships. Some were small, carrying only a few people from here to there. They had advanced engines capable of maintaining velocity in one direction (controlled by AI), which the helm of the flotilla's Capitol ship broadcast constantly out to every other helm. AI could be engaged to control the position of each ship, so the pilot of each ship need only monitor for issues, in most cases. 
+
+The ferry pilots, however, became talented fliers. Flying with the AI made it feel natural, as if the flotilla was not really moving at all. Weaving between the ships, they learned how to maneuver at close quarters in a way that was never possible before. This skills was developed and taught at flight schools, so that each generation could improve on the techniques of those who came before.  
+
+## Session 2:
+
+As the Flotilla made it's way across the stars, a whole economy had to arise. The ships all had captains, and eventually, these would die. New captains were elected from the crew. 
+
+The crew were all families. These would treat each other as a family, and as a crew. They would work together to keep the ship moving across the stars, always heading towards their new home. 
+
+No one was ever forced to do any job they didn't want to do, and they were always encouraged to do the jobs that suited them. If someone wanted to be a captain, and ship was made for them to try it out. If they didn't like it, they could either rejoin their original crew, or find a new crew to join. 
+
+Joining a new crew could be like marriage, or it could be like staying with friends for a while. Each ship was different, and it was easy to find a ship that suited the life style one was looking for. 
+
+There were great, huge city ships. These held many thousands of people. There would be clubs, and parties, and malls and all kinds of things to do. Being the captain of one of these ships was a much sought after position, but still, there was never any fighting about it. The voting happened peacefully, and everyone was able to find their place in the great fleet of ships. 
+
+In our game, Tarn is a young man from a great city ship. His parents lived in a small apartment on one of the main decks of a great city ship. It was not the life for him. He wanted to get out and see what the other ships had to offer. He knew that only 250 years into this journey, they were still not even halfway there. He had to find where in this great fleet of ships his life would fit. 
+
+Tarn talked to his parents, and they introduced him to the ship wright. His name was Wilbur. Wilbur was great at matching new young pilots with a great build. From a terminal a ship was selected by Tarn, and then an order was put in to one of the many manufacturing ships to build the new rig for Tarn. 
+
+While he waited, Tarn practiced on the flight sim. This was programmed to have a wireframe version of his ship, and he was able to practice flying through rings, and picking up and dropping of various shapes to different platforms. All of this was great practice, and Tarn really enjoyed visiting all the ships. 
+
+Having tested out the new rig in the sim, Tarn knew that he wanted to be a Runner. These ships, thousands in number, would run anything and everything between the ships in the flotila. When people needed to move between ships, or when packages or cargo had to be moved a Runner was called to run errands. In fact, a Runner was going to get the pleasure of flying Tarns ship over to the City where he could claim. 
+
+Practicing with all his intent, finally the ship arrived. It was beautiful. Sleek, shiny red, with angled fins, purely decorative. It was perfect. Tarn painted a great mouth on the front of the cockpit and named it Jaws! After some ancient comedy about some machine gone haywire and destroying some boats or some such. 
+

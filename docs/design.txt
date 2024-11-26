@@ -1,0 +1,32 @@
+# Premise
+
+Far away, or perhaps in another universe altogether, there is an oppressive Empire that has spread to several different planets in the stars. 
+
+Amongst this 
+
+# Design Rules:
+
+1. Every ship in the game must have a name.
+
+# Questions: 
+
+- How many ships are in the flotilla? 
+
+- How many people are on each ship?
+
+- What are the names of the ships? 
+
+- How does someone get a ship?
+
+- How does someone move around, or live in the flotilla, while it's traveling? 
+
+- Does Philos have weapons/combat?
+
+# Answers:
+
+# Feature list
+
+## Flight Training Simulator
+
+There is an advance computer that allows pilots to test out their ships before they have them manufactures. This helps prevent wasted ships. It also ensures that a pilot will be happy with their selection, and gives them room to change their mind. 
+
