@@ -3,9 +3,9 @@
 //=====Engine Includes=====
 #include "pch.h"
 #include "Tower/framework.h"
-#include "Tower/Physics/RigidBody/RigidBody2D.h"
-#include "Tower/Physics/RigidBody/RigidBody3D.h"
-#include "Tower/Physics/Force/GravityForce.h"
+#include "Tower/Physics/RigidBody/RigidBody2D.hpp"
+#include "Tower/Physics/RigidBody/RigidBody3D.hpp"
+#include "Tower/Physics/Force/GravityForce.hpp"
 
 namespace Tower
 {

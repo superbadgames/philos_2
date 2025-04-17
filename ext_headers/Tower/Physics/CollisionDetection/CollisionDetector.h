@@ -17,7 +17,7 @@ namespace Tower
 
         static shared_ptr<CollisionDetector> Instance(void);
 
-        void Check(const Entity* entity);
+        void Check(const Entity& entity);
 
     private:
         static shared_ptr<CollisionDetector> _instance;

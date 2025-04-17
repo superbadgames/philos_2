@@ -1,11 +1,10 @@
 #pragma once
 
-//=====Engine Includes=====
 #include "pch.h"
 #include "Tower/framework.h"
-//#include "Math/Timer.h"
-#include "Tower/Physics/RigidBody/RigidBody2D.h"
-#include "Tower/Physics/RigidBody/RigidBody3D.h"
+#include "Tower/Physics/RigidBody/RigidBody2D.hpp"
+#include "Tower/Physics/RigidBody/RigidBody3D.hpp"
+#include "Tower/Physics/Particle.hpp"
 
 namespace Tower
 {
@@ -20,6 +19,8 @@ namespace Tower
 
         virtual void v_UpdateForce(p_RigidBody3D body) = 0;
 
-    };//end class
+        virtual void v_UpdateForce(p_Particle body) = 0;
+
+    };
     typedef shared_ptr<ForceGenerator> p_ForceGenerator;
-}//end namespace
+}

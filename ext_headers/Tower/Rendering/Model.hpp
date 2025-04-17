@@ -5,7 +5,6 @@
 #include "Tower/Rendering/Texture.hpp"
 #include "Tower/Rendering/Mesh.hpp"
 #include "Tower/Rendering/Shader.hpp"
-#include "Tower/Rendering/Color.hpp"
 #include "glm/vec4.hpp"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
@@ -21,33 +20,26 @@ namespace Tower
 
         ~Model(void);
 
-        void CreateSprite(p_Texture texture, p_Shader shader);
+        void LoadFromFile(p_Shader shader, const string& filepath);
 
-        void LoadFromFile(const string& filepath, p_Shader shader);
+        void LoadFromFile(const string& filepath);
 
-        void LoadFromFileWithTexture(const string& modelFilepath, const string& textureFilepath, p_Shader shader);
-
-        void Draw(const glm::mat4& viewMatrix, const glm::mat4& entityMatrix);
+        void Draw(void);
 
         void EnableWireframeMode(void);
 
         void DisableWireframeMode(void);
 
-        inline void SetTexture(p_Texture texture)
-        {
-            _texture = texture;
-        }
+        // void SetColor(const glm::vec4& color);
 
-        inline void SetColor(const Color& color)
-        {
-            _color = color;
-        }
+        inline void SetShader(p_Shader shader) { _shader = shader; }
+
+        inline void SetTexture(p_Texture texture) { _texture = texture; }
 
     private:
         std::vector<p_Mesh> _meshes;
         p_Texture _texture;
         p_Shader _shader;
-        Color _color;
 
         void _ProcessNode(aiNode* node, const aiScene* scene);
 

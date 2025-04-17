@@ -32,6 +32,8 @@ namespace Tower
 
         void Integrate(F32 delta);
 
+        void AddForce(const glm::vec3& force);
+
     private:
         p_Entity _entity;
         glm::vec3 _velocity;
@@ -43,8 +45,11 @@ namespace Tower
         // An inverse mass of 0.0 implies an infinite mass,
         // thus acceleration will have no effect on the initial velocity
         F32 _inverseMass;
+        // A representation of all the accumulated forces that are acting
+        // on the object for this frame. Cleared each frame
+        glm::vec3 _forces;
 
-        void _ClearForceAccumulators(void);
+        void _ClearForces(void);
     };
     typedef shared_ptr<Particle> p_Particle;
 }

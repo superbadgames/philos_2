@@ -1,15 +1,14 @@
 #version 330 core
+
 out vec4 outputColor;
 
+in vec3 vertex_normal;
 in vec2 vertex_uvs;
 
-uniform sampler2D myTexture;
-uniform vec4 object_color;
-uniform vec4 light_color;
 
-
+uniform sampler2D spriteTexture;
 
 void main()
 {
-    outputColor = (light_color * object_color) * texture(myTexture, vertex_uvs);
+  outputColor = texture(spriteTexture, vertex_uvs);
 }

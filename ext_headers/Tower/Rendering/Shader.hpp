@@ -3,7 +3,6 @@
 #include "Tower/framework.h"
 #include "Tower/Rendering/Uniform.hpp"
 #include "Tower/Rendering/VertexAttribute.hpp"
-#include "Tower/Rendering/Color.hpp"
 #include <glm/vec2.hpp>
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
@@ -60,7 +59,7 @@ namespace Tower
 
         void SetUniform(string name, const glm::mat4& value);
 
-        void SetUniform(string name, const Color& color);
+        inline GLuint GetShaderHandle(void) const { return _shaderHandle; }
 
     private:
         GLuint _shaderHandle;

@@ -8,7 +8,6 @@
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/quaternion.hpp>
-#include <GLFW/glfw3.h>
 #include <vector>
 
 namespace Tower
