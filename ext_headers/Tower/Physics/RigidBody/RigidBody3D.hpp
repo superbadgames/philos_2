@@ -3,7 +3,7 @@
 #include "pch.h"
 #include "Tower/framework.h"
 //#include "Math/Timer.h"
-#include "Tower/Entity.hpp"
+#include "Tower/Rendering/RenderEntity.hpp"
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
 #include <glm/gtx/quaternion.hpp>
@@ -84,7 +84,7 @@ namespace Tower
 
         bool GetIsAwake(void);
 
-        void SetEntity(p_Entity obj);
+        void SetEntity(p_RenderEntity obj);
 
     private:
         void _TransformInertiaTensor(void);
@@ -94,7 +94,7 @@ namespace Tower
         real _inverseMass;
         real _linearDamping;
         real _angularDamping;
-        p_Entity _entity;
+        p_RenderEntity _entity;
         glm::mat4 _inverseInertiaTensor;
         glm::mat4 _inverseInertiaTensorInWorld;
         glm::vec3 _velocity;

@@ -20,7 +20,7 @@ void Wall::Init(const glm::vec3& position)
 {
     if (_entity == nullptr)
     {
-        _entity = Tower::EntityManager::Instance()->GetNext();
+        _entity = Tower::RenderEntityManager::Instance()->GetNext();
     }
 
     _entity->AddShader(Tower::ShaderManager::Instance()->GetShader("basic3d"));

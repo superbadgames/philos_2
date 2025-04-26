@@ -3,7 +3,7 @@
 #include "pch.h"
 #include <Tower/framework.h>
 #include <Tower/Managers/Director.hpp>
-#include <Tower/Entity.hpp>
+#include <Tower/Rendering/RenderEntity.hpp>
 #include <Tower/Rendering/Shader.hpp>
 #include <Tower/Managers/ShaderManager.hpp>
 #include <Tower/Managers/TextureManager.hpp>
@@ -34,7 +34,7 @@ namespace Simulator
         inline void DeactivateControl(void) { _activeControl = false; }
 
     private:
-        Tower::p_Entity _entity;
+        Tower::p_RenderEntity _entity;
         Tower::AxisAngle _rotation;
         glm::vec3 _forward;
         const S32 _maxThrottle = 5;

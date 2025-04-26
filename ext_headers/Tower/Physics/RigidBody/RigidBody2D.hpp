@@ -3,7 +3,7 @@
 #include "pch.h"
 #include "Tower/framework.h"
 //#include "Math/Timer.h"
-#include "Tower/Entity.hpp"
+#include "Tower/Rendering/RenderEntity.hpp"
 #include <glm/vec2.hpp>
 
 #include <cassert>
@@ -36,9 +36,9 @@ namespace Tower
 
         bool GetActive(void) const;
 
-        void SetEntity(p_Entity obj);
+        void SetEntity(p_RenderEntity obj);
 
-        p_Entity GetEntity(void) const;
+        p_RenderEntity GetRenderEntity(void) const;
 
         const glm::vec2 GetPosition(void) const;
 
@@ -90,7 +90,7 @@ namespace Tower
         real _angularDamping;
         real _rotation;
         real _torqueAccum;
-        p_Entity _entity;
+        p_RenderEntity _entity;
         glm::vec2 _velocity;
         glm::vec2 _acceleration;
         glm::vec2 _forceAccum;

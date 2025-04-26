@@ -12,7 +12,7 @@ The database is powered by sqlite3.
 
 #include "pch.h"
 #include "Tower/framework.h"
-#include "Tower/Managers/EntityManager.hpp"
+#include "Tower/Managers/RenderEntityManager.hpp"
 #include "Tower/Cameras/Camera.hpp"
 
 
