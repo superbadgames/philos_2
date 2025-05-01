@@ -4,7 +4,7 @@
 using namespace Simulator;
 
 Wall::Wall(void) :
-    _entity(nullptr),
+    _renderer(nullptr),
     _rotation(),
     _active(false)
 {
@@ -18,17 +18,17 @@ Wall::~Wall(void)
 
 void Wall::Init(const glm::vec3& position)
 {
-    if (_entity == nullptr)
+    if (_renderer == nullptr)
     {
-        _entity = Tower::RenderEntityManager::Instance()->GetNext();
+        _renderer = Tower::RenderingManager::Instance()->GetNext();
     }
 
-    _entity->AddShader(Tower::ShaderManager::Instance()->GetShader("basic3d"));
-    _entity->AddModel(Tower::ModelManager::Instance()->Get("wall"));
-    _entity->AddTexture(Tower::TextureManager::Instance()->GetTexture("wall_v1"));
-    _entity->SetPosition(position);
-    _entity->SetScale(glm::vec3(10.0f, 10.0f, 10.0f));
-    _entity->ToggleRendering(true);
+    _renderer->AddShader(Tower::ShaderManager::Instance()->GetShader("basic3d"));
+    _renderer->AddModel(Tower::ModelManager::Instance()->Get("wall"));
+    _renderer->AddTexture(Tower::TextureManager::Instance()->GetTexture("wall_v1"));
+    _renderer->SetPosition(position);
+    _renderer->SetScale(glm::vec3(10.0f, 10.0f, 10.0f));
+    _renderer->ToggleRendering(true);
 }
 
 void Wall::Update(F32 delta)

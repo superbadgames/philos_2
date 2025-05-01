@@ -3,7 +3,7 @@
 #include "pch.h"
 #include <Tower/framework.h>
 #include <Tower/Managers/Director.hpp>
-#include <Tower/Rendering/RenderEntity.hpp>
+#include <Tower/Rendering/Renderer.hpp>
 #include <Tower/Rendering/Shader.hpp>
 #include <Tower/Managers/ShaderManager.hpp>
 #include <Tower/Managers/TextureManager.hpp>
@@ -12,6 +12,9 @@
 
 namespace Simulator
 {
+    class TheZipper;
+    typedef shared_ptr<TheZipper> p_TheZipper;
+
     class TheZipper
     {
     public:
@@ -25,7 +28,7 @@ namespace Simulator
 
         void SetPosition(const glm::vec3& pos);
 
-        inline const glm::vec3& GetPosition(void) const { return _entity->GetPosition(); }
+        inline const glm::vec3& GetPosition(void) const { return _renderer->GetPosition(); }
 
         inline const glm::vec3& GetForward(void) const { return _forward; }
 
@@ -34,7 +37,7 @@ namespace Simulator
         inline void DeactivateControl(void) { _activeControl = false; }
 
     private:
-        Tower::p_RenderEntity _entity;
+        Tower::p_Renderer _renderer;
         Tower::AxisAngle _rotation;
         glm::vec3 _forward;
         const S32 _maxThrottle = 5;

@@ -4,6 +4,7 @@
 using namespace Simulator;
 
 SimulatorMap::SimulatorMap(void) :
+    _factory(),
     _wallsLeft(),
     _wallsRight(),
     _mines(),
@@ -37,7 +38,7 @@ void SimulatorMap::v_Init(F32 screenWidth, F32 screenHeight, F32 fov, F32 viewDi
     _zipperCamera->SetOffset(glm::vec2(300.0f, 85.0f));
     _camera = _zipperCamera;
 
-    _theZipper.Init(glm::vec3(0.0f));
+    _theZipper = _factory.v_Create(1);
 
     F32 distance = 300.0f;
     glm::vec3 nextPositionLeft = glm::vec3(distance, 0.0f, distance);
@@ -111,18 +112,24 @@ void SimulatorMap::v_Update(F32 delta)
         }
     }
 
+    // // I need a new home, likely as part of the Builder::Editor
+    // So, make the Builder::Editor a thing, import the DLL, and get to business
+    // Consider commenting out, and just going with the one ship, the zipper.
+    // In fact, this does need to be completely refactored, the World can't know
+    // anything about the editor, or the player, or whatever. That all has to be hashed
+    // out another way
     if (Tower::InputManager::Instance()->IsBindingPressed("swapControls"))
     {
         if (_builderInControl)
         {
             _builderInControl = false;
-            _theZipper.ActivateControls();
+            _theZipper->ActivateControls();
             _camera = _zipperCamera;
         }
         else
         {
             _builderInControl = true;
-            _theZipper.DeactivateControl();
+            _theZipper->DeactivateControl();
             _camera = _editorCamera;
         }
     }
@@ -163,13 +170,16 @@ void SimulatorMap::v_Update(F32 delta)
 
         _editorCamera->Update(delta);
     }
+    // Move me to zipper?
     else
     {
         _zipperCamera->Update(_theZipper.GetPosition(), glm::vec3(0.0f, 1.0f, 0.0f), _theZipper.GetForward());
     }
 
+    // I need a new method
     _theZipper.Update(delta);
 
+    // I need a new home
     if (_theZipper.GetPosition().z >= 30250.0f)
     {
         std::cout << "YOU WON!!! You've reached the end of the game, and there is nothing else to do!\n";

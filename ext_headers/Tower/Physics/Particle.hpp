@@ -8,7 +8,7 @@ A Particle is the simplest object that can be simulated in the physics engine.
 
 #include "pch.h"
 #include "Tower/framework.h"
-#include "Tower/Rendering/RenderEntity.hpp"
+#include "Tower/Rendering/Renderer.hpp"
 #include <glm/vec3.hpp>
 
 namespace Tower
@@ -18,11 +18,11 @@ namespace Tower
     public:
         Particle(void);
 
-        Particle(p_RenderEntity entity);
+        Particle(p_Renderer entity);
 
         ~Particle(void);
 
-        inline void SetEntity(p_RenderEntity entity) { _entity = entity; }
+        inline void SetEntity(p_Renderer entity) { _entity = entity; }
 
         void SetMass(F32 mass);
 
@@ -35,7 +35,7 @@ namespace Tower
         void AddForce(const glm::vec3& force);
 
     private:
-        p_RenderEntity _entity;
+        p_Renderer _entity;
         glm::vec3 _velocity;
         glm::vec3 _acceleration;
         // 0.0 = 100% drag, no velocity after integration

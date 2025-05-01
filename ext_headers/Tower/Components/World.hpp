@@ -12,7 +12,7 @@ The database is powered by sqlite3.
 
 #include "pch.h"
 #include "Tower/framework.h"
-#include "Tower/Managers/RenderEntityManager.hpp"
+#include "Tower/Managers/RenderingManager.hpp"
 #include "Tower/Cameras/Camera.hpp"
 
 
@@ -23,6 +23,7 @@ namespace Tower
     class World;
     typedef shared_ptr<World> p_World;
 
+    // Refactor me to be a singleton
     class World
     {
     public:

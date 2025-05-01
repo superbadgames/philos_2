@@ -4,7 +4,7 @@
 using namespace Simulator;
 
 TheZipper::TheZipper(void) :
-    _entity(nullptr),
+    _renderer(nullptr),
     _rotation(),
     _forward(glm::vec3(0.0f, 0.0f, 1.0f)),
     _throttleLevel(0),
@@ -20,17 +20,17 @@ TheZipper::~TheZipper(void)
 
 void TheZipper::Init(const glm::vec3& position)
 {
-    if (_entity == nullptr)
+    if (_renderer == nullptr)
     {
-        _entity = Tower::RenderEntityManager::Instance()->GetNext();
+        _renderer = Tower::RenderingManager::Instance()->GetNext();
     }
 
-    _entity->AddShader(Tower::ShaderManager::Instance()->GetShader("basic3d"));
-    _entity->AddModel(Tower::ModelManager::Instance()->Get("zipper"));
-    _entity->AddTexture(Tower::TextureManager::Instance()->GetTexture("zipper"));
-    _entity->SetScale(glm::vec3(10.0f, 10.0f, 10.0f));
-    _entity->SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
-    _entity->ToggleRendering(true);
+    _renderer->AddShader(Tower::ShaderManager::Instance()->GetShader("basic3d"));
+    _renderer->AddModel(Tower::ModelManager::Instance()->Get("zipper"));
+    _renderer->AddTexture(Tower::TextureManager::Instance()->GetTexture("zipper"));
+    _renderer->SetScale(glm::vec3(10.0f, 10.0f, 10.0f));
+    _renderer->SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+    _renderer->ToggleRendering(true);
 }
 
 
@@ -38,7 +38,7 @@ void TheZipper::Update(F32 delta)
 {
     //glm::vec2 mouseInput = Tower::InputManager::Instance()->GetMouseInputOffset();
 
-    glm::vec3 newPosition = _entity->GetPosition();
+    glm::vec3 newPosition = _renderer->GetPosition();
     if (_activeControl)
     {
         if (Tower::InputManager::Instance()->IsBindingPressed("throttleUp") && _throttleLevel < _maxThrottle)
@@ -76,5 +76,5 @@ void TheZipper::Update(F32 delta)
 
 void TheZipper::SetPosition(const glm::vec3& pos)
 {
-    _entity->SetPosition(pos);
+    _renderer->SetPosition(pos);
 }

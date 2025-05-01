@@ -3,7 +3,7 @@
 #include "pch.h"
 #include <Tower/framework.h>
 #include <Tower/Managers/Director.hpp>
-#include <Tower/Rendering/RenderEntity.hpp>
+#include <Tower/Rendering/Renderer.hpp>
 #include <Tower/Rendering/Shader.hpp>
 #include <Tower/Managers/ShaderManager.hpp>
 #include <Tower/Managers/TextureManager.hpp>
@@ -46,7 +46,7 @@ namespace Simulator
         inline void SetMoveSpeed(F32 speed) { _moveSpeed = speed; }
 
     private:
-        Tower::p_RenderEntity _entity;
+        Tower::p_Renderer _entity;
         Tower::AxisAngle _rotation;
         glm::vec3 _moveDirection;
         F32 _moveSpeed;

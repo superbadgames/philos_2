@@ -66,6 +66,7 @@ int main(void)
     Tower::ModelManager::Instance()->Load("wall", "..\\..\\Assets\\Models\\Simulator\\simulator_wall_v1.glb", basic3dShader);
     Tower::ModelManager::Instance()->Load("mine", "..\\..\\Assets\\Models\\Simulator\\simulator_spike_mine_v1.glb", basic3dShader);
 
+    // Call me by my singleton name, once I know how to read a database
     Simulator::p_SimulatorMap simulatorMap = std::make_shared<Simulator::SimulatorMap>();
     simulatorMap->v_Init(width, height, fov, viewDistance);
 
