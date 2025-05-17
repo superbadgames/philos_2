@@ -23,7 +23,7 @@ namespace Tower
         ~Camera2D(void) final;
 
         // Field of View is not used, but required by the base class
-        void v_Init(F32 screenWidth, F32 screenHeight, F32 fov, F32 viewDistance) final;
+        void v_Init(void) final;
 
         void Move(const glm::vec2& velocity);
 

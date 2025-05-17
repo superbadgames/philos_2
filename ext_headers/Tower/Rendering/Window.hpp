@@ -32,9 +32,11 @@ namespace Tower
 
         void CloseWindow(void);
 
-        void HideMouseCursor(void) const;
+        void ToggleMouseCursor(void);
 
-        void ShowMouseCursor(void) const;
+        void ToggleMouseCursor(bool state);
+
+        inline bool IsMouseOn(void) const { return _mouseOn; }
 
         inline S32 GetScreenWidth(void) { return _bufferWidth; }
 
@@ -50,6 +52,7 @@ namespace Tower
 
 
     protected:
+        bool _mouseOn;
         GLFWwindow* _mainWindow;
         S32 _bufferWidth;
         S32 _bufferHeight;

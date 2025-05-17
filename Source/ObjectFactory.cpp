@@ -13,26 +13,23 @@ ObjectFactory::~ObjectFactory(void)
 
 }
 
-Tower::p_Entity ObjectFactory::v_Create(U32 typeId)
+Tower::p_Player ObjectFactory::v_CreatePlayer(U32 typeId)
 {
-    Tower::p_Entity entity;
-    switch (typeId)
+    Tower::p_Player returnObject = nullptr;
+
+    if (typeId == EDITOR)
     {
-    case SIMULATOR_ZIPPER:
-        Simulator::TheZipper* zipper = new Simulator::TheZipper();
-        zipper->Init(glm::vec3(0.0f));
-        entity = std::make_shared<Tower::Entity>(zipper);
-        return entity;
-        // case SIMULATOR_WALL:
-        //     // Make a wall
-        //     break;
-        // case SIMULATOR_MINE:
-        //     // make a mine
-        //     break;
-        //     // test other cases
-        // default:
-        //     return nullptr;
-    };
-    return nullptr;
+        TowerBuilder::p_Editor editor = std::make_shared<TowerBuilder::Editor>();
+        editor->v_Init(glm::vec3(0.0f, 0.0f, -25.0f));
+        returnObject = editor;
+    }
+    else if (typeId == SIMULATOR_ZIPPER)
+    {
+        Simulator::p_TheZipper zipper = std::make_shared<Simulator::TheZipper>();
+        zipper->v_Init(glm::vec3(0.0f));
+        returnObject = zipper;
+    }
+
+    return returnObject;
 }
 

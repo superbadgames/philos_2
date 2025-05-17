@@ -57,6 +57,8 @@ namespace Tower
 
         void HideMouseCursor(void);
 
+        void ToggleMouse(void);
+
         F32 GetDeltaTime(void) const;
 
         F32 GetElapsedTime(void) const;

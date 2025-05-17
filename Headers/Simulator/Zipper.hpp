@@ -3,8 +3,8 @@
 #include "pch.h"
 #include <Tower/framework.h>
 #include <Tower/Managers/Director.hpp>
-#include <Tower/Rendering/Renderer.hpp>
-#include <Tower/Rendering/Shader.hpp>
+#include <Tower/Objects/Player.hpp>
+#include <Tower/Cameras/FollowCamera.hpp>
 #include <Tower/Managers/ShaderManager.hpp>
 #include <Tower/Managers/TextureManager.hpp>
 #include <Tower/Managers/InputManager.hpp>
@@ -15,31 +15,27 @@ namespace Simulator
     class TheZipper;
     typedef shared_ptr<TheZipper> p_TheZipper;
 
-    class TheZipper
+    class TheZipper : public Tower::Player
     {
     public:
         TheZipper(void);
 
+        TheZipper(const TheZipper& copy);
+
+        TheZipper& operator=(const TheZipper& copy);
+
         ~TheZipper(void);
 
-        void Init(const glm::vec3& position);
+        void v_Init(const glm::vec3& position) final;
 
-        void Update(F32 delta);
+        void v_Activate(void) final;
 
-        void SetPosition(const glm::vec3& pos);
+        void v_Deactivate(void) final;
 
-        inline const glm::vec3& GetPosition(void) const { return _renderer->GetPosition(); }
+        void v_Update(F32 delta) final;
 
-        inline const glm::vec3& GetForward(void) const { return _forward; }
-
-        inline void ActivateControls(void) { _activeControl = true; }
-
-        inline void DeactivateControl(void) { _activeControl = false; }
 
     private:
-        Tower::p_Renderer _renderer;
-        Tower::AxisAngle _rotation;
-        glm::vec3 _forward;
         const S32 _maxThrottle = 5;
         S32 _throttleLevel;
         F32 _throttleMultiplier;

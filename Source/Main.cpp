@@ -26,23 +26,6 @@ int main(void)
     Tower::p_InputManager inputManager = Tower::InputManager::Instance();
     inputManager->AddBinding("exit", Tower::InputButton::ESCAPE);
 
-    // Move to Tower::Builder::Editor. This should be the same for every game.
-    inputManager->AddArrowMovement("camera_move_up", "camera_move_down", "camera_move_right", "camera_move_left");
-    inputManager->AddBinding("camera_sprint", Tower::InputButton::LEFT_SHIFT);
-    // Rename to something better, like Toggle Editor
-    inputManager->AddBinding("swapControls", Tower::InputButton::TAB);
-    // Also, the Editor needs to know how to do this. If the mouse needs to be toggled, do it from the Editor view
-    // Other than that, it should be a game config based on if 1) a controller is connected and 2) the mouse is NOT being used.
-    // This needs more thought.
-    inputManager->AddBinding("toggleMouse", Tower::InputButton::ENTER);
-
-    // Move to the Zipper Init.
-    inputManager->AddWASDMovement("move_forward", "move_back", "move_right", "move_left");
-    inputManager->AddBinding("up", Tower::InputButton::E);
-    inputManager->AddBinding("down", Tower::InputButton::Q);
-    inputManager->AddBinding("throttleUp", Tower::InputButton::W);
-    inputManager->AddBinding("throttleDown", Tower::InputButton::S);
-    inputManager->AddBinding("fullstop", Tower::InputButton::SPACE);
 
     // Eventually, a more sophisticated method will be needed, maybe. See, there are going to be many shaders, and some
     // are going to be used only for some objects. Maybe, those objects, or their managers should control when the shaders
@@ -101,7 +84,7 @@ int main(void)
         }
 
 
-        simulatorMap->v_Update(director->GetDeltaTime());
+        simulatorMap->Update(director->GetDeltaTime());
         simulatorMap->Render();
 
         director->EndFrame();

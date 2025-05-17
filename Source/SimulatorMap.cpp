@@ -7,14 +7,7 @@ SimulatorMap::SimulatorMap(void) :
     _factory(),
     _wallsLeft(),
     _wallsRight(),
-    _mines(),
-    _editorCamera(nullptr),
-    _zipperCamera(nullptr),
-    _theZipper(),
-    _editorCameraMoveSpeed(100.0f),
-    _editorCameraSprintMultiplier(10.0f),
-    _mouseOn(true),
-    _builderInControl(false)
+    _mines()
 {
 
 }
@@ -30,15 +23,8 @@ void SimulatorMap::v_Init(void)
 {
     Tower::Director::Instance()->SetWindowBackgroundColor(glm::vec3(0.1f, 0.1f, 0.3f));
 
-    _editorCamera = std::make_shared<Tower::Camera3D>();
-    _editorCamera->v_Init(screenWidth, screenHeight, fov, viewDistance);
-
-    _zipperCamera = std::make_shared<Tower::FollowCamera>();
-    _zipperCamera->v_Init(screenWidth, screenHeight, fov, viewDistance);
-    _zipperCamera->SetOffset(glm::vec2(300.0f, 85.0f));
-    _camera = _zipperCamera;
-
-    _theZipper = _factory.v_Create(1);
+    _editor = _factory.v_CreatePlayer(1);
+    _playerOne = _factory.v_CreatePlayer(2);
 
     F32 distance = 300.0f;
     glm::vec3 nextPositionLeft = glm::vec3(distance, 0.0f, distance);
@@ -90,103 +76,6 @@ void SimulatorMap::v_Init(void)
         nextPositionLeft.z += distance;
     }
 
-    _mouseOn = false;
+    Tower::Director::Instance()->HideMouseCursor();
 }
 
-
-void SimulatorMap::v_Update(F32 delta)
-{
-    // TODO: Refactor away
-    // Where can this live?
-    if (Tower::InputManager::Instance()->IsBindingPressed("toggleMouse"))
-    {
-        if (_mouseOn)
-        {
-            Tower::Director::Instance()->HideMouseCursor();
-            _mouseOn = false;
-        }
-        else
-        {
-            Tower::Director::Instance()->ShowMouseCursor();
-            _mouseOn = true;
-        }
-    }
-
-    // // I need a new home, likely as part of the Builder::Editor
-    // So, make the Builder::Editor a thing, import the DLL, and get to business
-    // Consider commenting out, and just going with the one ship, the zipper.
-    // In fact, this does need to be completely refactored, the World can't know
-    // anything about the editor, or the player, or whatever. That all has to be hashed
-    // out another way
-    if (Tower::InputManager::Instance()->IsBindingPressed("swapControls"))
-    {
-        if (_builderInControl)
-        {
-            _builderInControl = false;
-            _theZipper->ActivateControls();
-            _camera = _zipperCamera;
-        }
-        else
-        {
-            _builderInControl = true;
-            _theZipper->DeactivateControl();
-            _camera = _editorCamera;
-        }
-    }
-
-    if (_builderInControl)
-    {
-        F32 finalMovSpeed = _editorCameraMoveSpeed;
-
-        if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("camera_sprint"))
-        {
-            finalMovSpeed *= _editorCameraSprintMultiplier;
-        }
-
-        if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("move_forward"))
-        {
-            _editorCamera->MoveForward(finalMovSpeed * delta);
-        }
-        else if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("move_back"))
-        {
-            _editorCamera->MoveBack(finalMovSpeed * delta);
-        }
-        else if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("move_right"))
-        {
-            _editorCamera->MoveRight(finalMovSpeed * delta);
-        }
-        else if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("move_left"))
-        {
-            _editorCamera->MoveLeft(finalMovSpeed * delta);
-        }
-        else if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("up"))
-        {
-            _editorCamera->MoveUp(finalMovSpeed * delta);
-        }
-        else if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("down"))
-        {
-            _editorCamera->MoveDown(finalMovSpeed * delta);
-        }
-
-        _editorCamera->Update(delta);
-    }
-    // Move me to zipper?
-    else
-    {
-        _zipperCamera->Update(_theZipper.GetPosition(), glm::vec3(0.0f, 1.0f, 0.0f), _theZipper.GetForward());
-    }
-
-    // I need a new method
-    _theZipper.Update(delta);
-
-    // I need a new home
-    if (_theZipper.GetPosition().z >= 30250.0f)
-    {
-        std::cout << "YOU WON!!! You've reached the end of the game, and there is nothing else to do!\n";
-    }
-
-    for (U32 i = 0; i < NUM_MINES; ++i)
-    {
-        _mines[i].Update(delta);
-    }
-}

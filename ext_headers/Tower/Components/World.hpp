@@ -12,10 +12,10 @@ The database is powered by sqlite3.
 
 #include "pch.h"
 #include "Tower/framework.h"
+#include "Tower/Managers/Director.hpp"
 #include "Tower/Managers/RenderingManager.hpp"
 #include "Tower/Objects/Player.hpp"
-#include "Tower/Cameras/Camera3D.hpp"
-#include "Tower/Cameras/FollowCamera.hpp"
+#include "Tower/Builder/Editor.hpp"
 
 
 #include <map>
@@ -49,7 +49,7 @@ namespace Tower
         // TODO:
         // Until a process system has been put into place, just call
         // each of the objects created in v_Init.
-        virtual void v_Update(F32 delta) = 0;
+        void Update(F32 delta);
 
         // TODO:
         // Later, when the map db is working, save the map to file
@@ -59,7 +59,9 @@ namespace Tower
 
     protected:
         //string currentWorld;
+        bool _editorActive;
         p_Player _playerOne;
+        TowerBuilder::p_Editor _editor;
 
     };
 }
