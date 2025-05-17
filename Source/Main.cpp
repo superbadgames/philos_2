@@ -4,46 +4,51 @@
 #include "Simulator/SimulatorMap.hpp"
 
 #include <Tower/Managers/Director.hpp>
+#include <Tower/Managers/ConfigurationManager.hpp>
 #include <Tower/Managers/InputManager.hpp>
 #include <Tower/Managers/ShaderManager.hpp>
 
 int main(void)
 {
-    // TODO: This should come from a config file
-    const U32 WINDOW_WIDTH = 1200;
-    const U32 WINDOW_HEIGHT = 800;
-    F32 width = (F32)WINDOW_WIDTH;
-    F32 height = (F32)WINDOW_HEIGHT;
-    F32 fov = 45.0f;
-    F32 viewDistance = 5000.0f;
-
     Tower::p_Director director = Tower::Director::Instance();
 
-    if (!director->Init(Tower::WindowType::OPEN_GL, "Tower Sandbox", WINDOW_WIDTH, WINDOW_HEIGHT))
+    // Window Type, Name, Width, Height, field of view, view distance
+    if (!director->Init(Tower::WindowType::OPEN_GL, "Tower Sandbox", 1200, 800, 45.0f, 5000.0f))
     {
         std::cout << "Error! Unable to initialize." << std::endl;
         return 1;
     }
 
+    // Should be deleted later. This code should live in the Player Objects where they are used
     //
     // Initialize Input Bindings
     //
     Tower::p_InputManager inputManager = Tower::InputManager::Instance();
     inputManager->AddBinding("exit", Tower::InputButton::ESCAPE);
+
+    // Move to Tower::Builder::Editor. This should be the same for every game.
     inputManager->AddArrowMovement("camera_move_up", "camera_move_down", "camera_move_right", "camera_move_left");
     inputManager->AddBinding("camera_sprint", Tower::InputButton::LEFT_SHIFT);
+    // Rename to something better, like Toggle Editor
+    inputManager->AddBinding("swapControls", Tower::InputButton::TAB);
+    // Also, the Editor needs to know how to do this. If the mouse needs to be toggled, do it from the Editor view
+    // Other than that, it should be a game config based on if 1) a controller is connected and 2) the mouse is NOT being used.
+    // This needs more thought.
+    inputManager->AddBinding("toggleMouse", Tower::InputButton::ENTER);
 
+    // Move to the Zipper Init.
     inputManager->AddWASDMovement("move_forward", "move_back", "move_right", "move_left");
     inputManager->AddBinding("up", Tower::InputButton::E);
     inputManager->AddBinding("down", Tower::InputButton::Q);
-
-    inputManager->AddBinding("toggleMouse", Tower::InputButton::ENTER);
-
-    inputManager->AddBinding("swapControls", Tower::InputButton::TAB);
     inputManager->AddBinding("throttleUp", Tower::InputButton::W);
     inputManager->AddBinding("throttleDown", Tower::InputButton::S);
     inputManager->AddBinding("fullstop", Tower::InputButton::SPACE);
 
+    // Eventually, a more sophisticated method will be needed, maybe. See, there are going to be many shaders, and some
+    // are going to be used only for some objects. Maybe, those objects, or their managers should control when the shaders
+    // are loaded, or maybe a shader manager should do that, reading which shaders to load from a data base.
+    // If, for instance, the data base has a config for shaders to load, then it could be changes and configured
+    // from the editor later, for faster iterations on various shaders that will eventually be created. Just a thought.
     //
     // Initialize shaders
     //
@@ -51,6 +56,8 @@ int main(void)
     basic3dShader->Load("..\\..\\Assets\\Default\\Shaders\\basic_vertex.glsl", "..\\..\\Assets\\Default\\Shaders\\basic_fragment.glsl");
     Tower::ShaderManager::Instance()->RegisterShader("basic3d", basic3dShader);
 
+    // Very much like the shaders, maybe a better way to add a deal with new textures is needed. If these were also entries
+    // in a data base, it would give me more options.
     //
     // Initialize Textures
     //
@@ -59,6 +66,17 @@ int main(void)
     Tower::TextureManager::Instance()->LoadTexture("mine_v1", "..\\..\\Assets\\Textures\\Simulator\\Simulator_Mine.png");
     Tower::TextureManager::Instance()->LoadTexture("wall_v1", "..\\..\\Assets\\Textures\\Simulator\\Simulator_Wall.png");
 
+    // This should be moved. Here is a thought.
+    // 1. The world calls the db, which has a list of models that need to be loaded.
+    // 2. When a level is changed, or "unloaded", the models are deleted from memory, perhaps the
+    //    model manager completely purges all loaded models?
+    // 3. It reads the list of new models for the map to load. These models are loaded from memory,
+    //    until the level is changed. when they are deleted. I could even add a hard change, or soft change
+    //    to control when zones load and unload, so that you don't have to wait for the whole world to load
+    //    because you go in a house, but if you go to a different zone, far away, loading screen will be doing
+    //    all this work of unloading and loading models, textures and maybe even shaders.
+    // 4. With the models loaded in memory, the assets will now be able to function when they are created next
+    //    This is an important order of operations thing for the World code.
     //
     // Initialize 3D models
     //
@@ -66,14 +84,17 @@ int main(void)
     Tower::ModelManager::Instance()->Load("wall", "..\\..\\Assets\\Models\\Simulator\\simulator_wall_v1.glb", basic3dShader);
     Tower::ModelManager::Instance()->Load("mine", "..\\..\\Assets\\Models\\Simulator\\simulator_spike_mine_v1.glb", basic3dShader);
 
+    // Replace with global world, when database is working
     // Call me by my singleton name, once I know how to read a database
     Simulator::p_SimulatorMap simulatorMap = std::make_shared<Simulator::SimulatorMap>();
-    simulatorMap->v_Init(width, height, fov, viewDistance);
+    simulatorMap->v_Init();
 
     while (!director->ShouldProgramClose())
     {
         director->StartFrame();
 
+        // This should be controlled by something else. Something like a World Update would make sense... but
+        /// that isn't going to be a thing. I'm not sure. I need to think about this one.
         if (inputManager->IsBindingPressed("exit"))
         {
             director->CloseProgram();

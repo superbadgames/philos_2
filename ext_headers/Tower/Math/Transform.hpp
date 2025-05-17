@@ -9,10 +9,17 @@
 
 namespace Tower
 {
+    class Transform;
+    typedef shared_ptr<Transform> p_Transform;
+
     class Transform
     {
     public:
         Transform(void);
+
+        Transform(const Transform& copy);
+
+        Transform& operator=(const Transform& copy);
 
         ~Transform(void);
 
@@ -28,6 +35,10 @@ namespace Tower
 
         inline void SetScale(const glm::vec3& scale) { _scale = scale; }
 
+        inline const glm::vec3& GetForward(void) const { return _forward; }
+
+        inline void SetForward(const glm::vec3& axis) { _forward = axis; }
+
         inline const AxisAngle& GetRotation(void) const { return _rotation; }
 
         inline void SetRotation(const AxisAngle& rotation) { _rotation = rotation; }
@@ -37,7 +48,7 @@ namespace Tower
     private:
         glm::vec3 _position;
         glm::vec3 _scale;
+        glm::vec3 _forward;
         AxisAngle _rotation;
     };
-    typedef shared_ptr<Transform> p_Transform;
 };

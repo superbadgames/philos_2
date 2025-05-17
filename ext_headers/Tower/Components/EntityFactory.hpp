@@ -2,7 +2,7 @@
 
 #include "pch.h"
 #include "Tower/framework.h"
-#include "Tower/Entity.hpp"
+#include "Tower/Objects/Entity.hpp"
 
 namespace Tower
 {

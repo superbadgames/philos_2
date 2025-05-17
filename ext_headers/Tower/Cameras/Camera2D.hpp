@@ -16,6 +16,10 @@ namespace Tower
     public:
         Camera2D(void);
 
+        Camera2D(const Camera2D& copy);
+
+        Camera& operator=(const Camera& copy);
+
         ~Camera2D(void) final;
 
         // Field of View is not used, but required by the base class

@@ -21,10 +21,16 @@ namespace Tower
     public:
         Camera(void);
 
+        Camera(const Camera& copy);
+
+        Camera& operator=(const Camera& copy);
+
         virtual ~Camera(void) {};
 
         // Should call either InitOrthographic or InitPerspective
         virtual void v_Init(F32 screenWidth, F32 screenHeight, F32 fov, F32 viewDistance) = 0;
+
+        virtual void v_Update(F32 delta) {}
 
         inline const glm::mat4& GetViewMatrix(void) const { return _viewMatrix; }
 

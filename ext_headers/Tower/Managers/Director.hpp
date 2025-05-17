@@ -11,6 +11,7 @@
 #include "Tower/Managers/ShaderManager.hpp"
 #include "Tower/Managers/ModelManager.hpp"
 #include "Tower/Systems/PhysicsSystem.hpp"
+#include "Tower/Managers/ConfigurationManager.hpp"
 
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -34,7 +35,9 @@ namespace Tower
 
         static shared_ptr<Director> Instance(void);
 
-        bool Init(WindowType type = WindowType::OPEN_GL, string name = "Tower Window", const U32 width = 800, const U32 height = 600);
+        // Ultimately, these arguments suck. This needs to be a db file, that the director will open, and read values from. Maybe this is where
+        // I will start my db implementations, once, the world is sorted out
+        bool Init(WindowType type, string name, U32 windowWidth, U32 windowHeight, F32 fov, F32 viewDistance);
 
         void Cleanup(void);
 

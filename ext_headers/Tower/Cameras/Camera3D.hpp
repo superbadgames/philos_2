@@ -23,7 +23,7 @@ namespace Tower
 
         void v_Init(F32 screenWidth, F32 screenHeight, F32 fov, F32 viewDistance) final;
 
-        void Update(F32 delta);
+        void v_Update(F32 delta) final;
 
         void MoveForward(F32 speed);
 

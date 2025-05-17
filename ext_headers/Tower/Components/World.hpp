@@ -13,7 +13,9 @@ The database is powered by sqlite3.
 #include "pch.h"
 #include "Tower/framework.h"
 #include "Tower/Managers/RenderingManager.hpp"
-#include "Tower/Cameras/Camera.hpp"
+#include "Tower/Objects/Player.hpp"
+#include "Tower/Cameras/Camera3D.hpp"
+#include "Tower/Cameras/FollowCamera.hpp"
 
 
 #include <map>
@@ -42,7 +44,7 @@ namespace Tower
         // By magic, I mean that each object defined in the
         // Project will have an _entity handle, and that will
         // be used for all the rendering.
-        virtual void v_Init(F32 screenWidth, F32 screenHeight, F32 fov, F32 viewDistance) = 0;
+        virtual void v_Init(void) = 0;
 
         // TODO:
         // Until a process system has been put into place, just call
@@ -55,11 +57,9 @@ namespace Tower
 
         void Render(void);
 
-        inline void SetCamera(p_Camera camera) { _camera = camera; }
-
     protected:
         //string currentWorld;
-        p_Camera _camera;
+        p_Player _playerOne;
 
     };
 }

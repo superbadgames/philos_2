@@ -26,7 +26,7 @@ SimulatorMap::~SimulatorMap(void)
 }
 
 
-void SimulatorMap::v_Init(F32 screenWidth, F32 screenHeight, F32 fov, F32 viewDistance)
+void SimulatorMap::v_Init(void)
 {
     Tower::Director::Instance()->SetWindowBackgroundColor(glm::vec3(0.1f, 0.1f, 0.3f));
 

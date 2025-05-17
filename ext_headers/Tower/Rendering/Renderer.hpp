@@ -21,11 +21,18 @@ namespace Tower
     public:
         Renderer(void);
 
+        Renderer(const Renderer& copy);
+
+        Renderer& operator=(const Renderer& copy);
+
         ~Renderer(void);
+
+        inline S32 GetId(void) const { return _id; }
 
         // Will reset the Renderer, indicates that a Map has just changed
         void Reset(void);
 
+        // The Model Matrix holds the transformation needed for the object to be positioned in the world.
         void Render(const glm::mat4& viewMatrix) const;
 
         void AddModel(void);
@@ -34,9 +41,15 @@ namespace Tower
 
         inline void AddModel(p_Model model) { _model = model; }
 
+        inline p_Model GetModel(void) const { return _model; }
+
         void AddSprite(p_Shader shader, p_Texture texture);
 
+        inline p_Sprite GetSprite(void) const { return _sprite; }
+
         void AddCubeModel(p_Texture texture);
+
+        inline p_Cube GetCubeModel(void) const { return _cubeModel; }
 
         void AddShader(void);
 
@@ -48,23 +61,9 @@ namespace Tower
 
         inline void AddTexture(p_Texture texture) { _model->SetTexture(texture); }
 
-        inline const Color& GetColor(void) const { return _color; }
-
         void SetColor(const Color& color);
 
-        const glm::vec3& GetPosition(void) const;
-
-        void SetPosition(const glm::vec3& position);
-
-        const glm::vec3& GetScale(void) const;
-
-        void SetScale(const glm::vec3& scale);
-
-        const AxisAngle& GetRotation(void) const;
-
-        void SetRotation(const AxisAngle& rotation);
-
-        void SetRotation(F32 angle, const glm::vec3& axis);
+        inline const Color& GetColor(void) const { return _color; }
 
         inline bool IsRendering(void) const { return _isRendering; }
 
@@ -76,6 +75,12 @@ namespace Tower
 
         inline void ToggleShouldReset(void) { _shouldReset = !_shouldReset; }
 
+        inline bool ShouldReset(void) const { return _shouldReset; }
+
+        inline void SetTransform(p_Transform transform) { _transform = transform; }
+
+        inline p_Transform GetTransform(void) const { return _transform; }
+
     private:
         static S32 _NEXT_ID;
         bool _isRendering;
@@ -85,7 +90,7 @@ namespace Tower
         p_Sprite _sprite;
         p_Cube _cubeModel;
         p_Shader _shader;
-        Transform _transform;
+        p_Transform _transform;
         Color _color;
     };
 }

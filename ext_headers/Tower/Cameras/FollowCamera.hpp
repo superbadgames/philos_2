@@ -2,6 +2,7 @@
 
 #include "pch.h"
 #include "Tower/framework.h"
+#include "Tower/Math/Transform.hpp"
 #include "Tower/Cameras/Camera.hpp"
 #include "Tower/Managers/InputManager.hpp"
 
@@ -19,18 +20,22 @@ namespace Tower
 
         void v_Init(F32 screenWidth, F32 screenHeight, F32 fov, F32 viewDistance) final;
 
-        void Update(const glm::vec3& targetPos, const glm::vec3& targetUp, const glm::vec3& targetDirection);
+        void v_Update(F32 delta) final;
 
         inline void SetOffset(const glm::vec2& offset) { _cameraOffset = offset; }
 
         inline const glm::mat4& GetViewMatrix(void) const { return _viewMatrix; }
 
+        inline void SetTarget(p_Transform target) { _targetTransform = target; }
+
     private:
+        glm::vec3 _up;
         glm::vec3 _eye;
         glm::vec3 _cameraForward;
         glm::vec3 _cameraLeft;
         glm::vec3 _cameraUp;
         glm::vec2 _cameraOffset;
         F32 _followDistance;
+        p_Transform _targetTransform;
     };
 }
