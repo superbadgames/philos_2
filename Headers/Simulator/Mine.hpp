@@ -3,29 +3,34 @@
 #include "pch.h"
 #include <Tower/framework.h>
 #include <Tower/Managers/Director.hpp>
-#include <Tower/Rendering/Renderer.hpp>
-#include <Tower/Rendering/Shader.hpp>
+#include <Tower/Objects/DynamicEnvironment.hpp>
 #include <Tower/Managers/ShaderManager.hpp>
 #include <Tower/Managers/TextureManager.hpp>
 
 namespace Simulator
 {
-    class Mine
+    class Mine;
+    typedef shared_ptr<Mine> p_Mine;
+
+    class Mine : public Tower::DynamicEnvironmentObject
     {
     public:
         Mine(void);
 
+        Mine(const Mine& copy);
+
+        Mine& operator=(const Mine& copy);
+
         ~Mine(void);
 
-        void Init(const glm::vec3& position);
+        void v_Init(Tower::p_Transform transform);
 
-        void Update(F32 delta);
+        void v_Activate(void);
 
-        void SetPosition(const glm::vec3& pos);
+        void v_Deactivate(void);
 
-        inline void Activate(void) { _active = true; }
+        void v_Update(F32 delta);
 
-        inline void Deactivate(void) { _active = false; }
 
         inline void SetMoveUp(void)
         {
@@ -46,12 +51,9 @@ namespace Simulator
         inline void SetMoveSpeed(F32 speed) { _moveSpeed = speed; }
 
     private:
-        Tower::p_Renderer _entity;
-        Tower::AxisAngle _rotation;
-        glm::vec3 _moveDirection;
-        F32 _moveSpeed;
-        const F32 _moveLimit = 300.0f;
-        bool _active;
         bool _moveUp;
+        const F32 _moveLimit = 300.0f;
+        F32 _moveSpeed;
+        glm::vec3 _moveDirection;
     };
 }

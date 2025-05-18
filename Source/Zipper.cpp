@@ -24,6 +24,8 @@ TheZipper& TheZipper::operator=(const TheZipper& copy)
 {
     if (this == &copy) return *this;
 
+    Player::operator=(copy);
+
     _throttleLevel = copy._throttleLevel;
     _throttleMultiplier = copy._throttleMultiplier;
     _activeControl = copy._activeControl;
@@ -37,6 +39,8 @@ TheZipper::~TheZipper(void)
 
 void TheZipper::v_Init(const glm::vec3& position)
 {
+
+
     if (_renderer == nullptr)
     {
         _renderer = Tower::RenderingManager::Instance()->GetNext();
@@ -45,9 +49,11 @@ void TheZipper::v_Init(const glm::vec3& position)
     _renderer->AddShader(Tower::ShaderManager::Instance()->GetShader("basic3d"));
     _renderer->AddModel(Tower::ModelManager::Instance()->Get("zipper"));
     _renderer->AddTexture(Tower::TextureManager::Instance()->GetTexture("zipper"));
+    _renderer->SetTransform(_transform);
+    _renderer->ToggleRendering(true);
 
-    SetScale(glm::vec3(10.0f, 10.0f, 10.0f));
-    SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+    _transform->SetScale(glm::vec3(10.0f, 10.0f, 10.0f));
+    _transform->SetPosition(position);
     ToggleRendering(true);
 
     Tower::p_FollowCamera cam = std::make_shared<Tower::FollowCamera>();
@@ -64,6 +70,18 @@ void TheZipper::v_Init(const glm::vec3& position)
     Tower::InputManager::Instance()->AddBinding("zipper_throttleUp", Tower::InputButton::W);
     Tower::InputManager::Instance()->AddBinding("zipper_throttleDown", Tower::InputButton::S);
     Tower::InputManager::Instance()->AddBinding("zipper_fullstop", Tower::InputButton::SPACE);
+}
+
+
+void TheZipper::v_Activate(void)
+{
+    _active = true;
+}
+
+
+void TheZipper::v_Deactivate(void)
+{
+    _active = false;
 }
 
 

@@ -23,30 +23,31 @@ void SimulatorMap::v_Init(void)
 {
     Tower::Director::Instance()->SetWindowBackgroundColor(glm::vec3(0.1f, 0.1f, 0.3f));
 
-    _editor = _factory.v_CreatePlayer(1);
-    _playerOne = _factory.v_CreatePlayer(2);
+    _editor = _factory.v_CreatePlayer(Philos::GAME_OBJECT_TYPES::EDITOR);
+    _playerOne = _factory.v_CreatePlayer(Philos::GAME_OBJECT_TYPES::SIMULATOR_ZIPPER);
 
+    // This data needs to come from the db
     F32 distance = 300.0f;
     glm::vec3 nextPositionLeft = glm::vec3(distance, 0.0f, distance);
     glm::vec3 nextPositionRight = glm::vec3(-distance, 0.0f, distance);
 
-    Tower::AxisAngle wallRotation{};
-    wallRotation.axis = glm::vec3(0.0f, 0.0f, 1.0f);
-    wallRotation.angle = 90.0f;
+    Tower::AxisAngle rotation{};
+    rotation.axis = glm::vec3(0.0f, 0.0f, 1.0f);
+    rotation.angle = 90.0f;
 
-    glm::vec3 wallScale(100.0f, 420.0f, 75.0f);
+    Tower::p_Transform transform = std::make_shared<Tower::Transform>();
+    transform->SetRotation(rotation);
+    transform->SetScale(glm::vec3(100.0f, 420.0f, 75.0f));
 
     for (U32 i = 0; i < NUM_WALLS; ++i)
     {
-        _wallsLeft[i].Init(nextPositionLeft);
-        _wallsLeft[i].SetRotation(wallRotation);
-        _wallsLeft[i].SetScale(wallScale);
-        _wallsLeft[i].Activate();
+        // Left wall
+        transform->SetPosition(nextPositionLeft);
+        _staticEnvironment.push_back(_factory.v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform));
 
-        _wallsRight[i].Init(nextPositionRight);
-        _wallsRight[i].SetRotation(wallRotation);
-        _wallsRight[i].SetScale(wallScale);
-        _wallsRight[i].Activate();
+        // Right wall
+        transform->SetPosition(nextPositionRight);
+        _staticEnvironment.push_back(_factory.v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform));
 
         nextPositionLeft.z += distance;
         nextPositionRight.z += distance;
@@ -55,25 +56,19 @@ void SimulatorMap::v_Init(void)
     distance = 200.0f;
     nextPositionLeft = glm::vec3(10.0f, 50.0f, distance);
 
+    // Mine
+    rotation.axis = glm::vec3(0.0f, 1.0f, 0.0f);
+    rotation.angle = 0.0f;
+
+    transform->SetScale(glm::vec3(5.0f, 5.0f, 5.0f));
+    transform->SetRotation(rotation);
+
     for (U32 i = 0; i < NUM_MINES; ++i)
     {
-        _mines[i].Init(nextPositionLeft);
-        U32 randomSpeed = std::rand() % 100 + 15;
-        _mines[i].SetMoveSpeed((F32)randomSpeed);
+        _dynamicEnvironment.push_back(_factory.v_CreateDynamicEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_MINE, transform));
 
-        U32 headOrTails = std::rand() % 2;
-
-        if (headOrTails == 1)
-        {
-            _mines[i].SetMoveSide();
-        }
-        else
-        {
-            _mines[i].SetMoveUp();
-        }
-
-        _mines[i].Activate();
         nextPositionLeft.z += distance;
+        transform->SetPosition(nextPositionLeft);
     }
 
     Tower::Director::Instance()->HideMouseCursor();

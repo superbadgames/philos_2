@@ -45,6 +45,10 @@ namespace Tower
 
         void SetRotation(F32 angle, const glm::vec3& axis);
 
+        inline void SetRotationAngle(F32 angle) { _rotation.angle = angle; }
+
+        inline F32 GetRotationAngle(void) const { return _rotation.angle; }
+
     private:
         glm::vec3 _position;
         glm::vec3 _scale;

@@ -33,15 +33,13 @@ namespace Tower
 
         virtual void v_Update(F32 delta) = 0;
 
-        void Render(void);
-
         inline bool IsActive(void) const { return _active; }
 
         inline void ToggleActive(bool state) { _active = state; }
 
-        inline bool IsRendering(void) const { return _render; }
+        inline bool IsRendering(void) const { return _renderer->IsRendering(); }
 
-        inline void ToggleRendering(bool state) { _render = state; }
+        inline void ToggleRendering(bool state) { _renderer->ToggleRendering(state); }
 
         inline p_Renderer GetRenderer(void) const { return _renderer; }
 
@@ -65,7 +63,6 @@ namespace Tower
 
     protected:
         bool _active;
-        bool _render;
         // Replace later with a call to get the velocity from the rigidbody
         p_Renderer _renderer;
         p_Transform _transform;

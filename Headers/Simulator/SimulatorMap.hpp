@@ -2,7 +2,7 @@
 #include "pch.h"
 #include <Tower/framework.h>
 
-#include "ObjectFactory.hpp"
+#include "Creator.hpp"
 #include "Simulator/Mine.hpp"
 #include "Simulator/Wall.hpp"
 
@@ -33,7 +33,7 @@ namespace Simulator
         // This is all basically data...
         // If this could come from data, would I even need this file?
         static const U32 NUM_WALLS = 500;
-        Philos::ObjectFactory _factory;
+        Philos::Creator _factory;
         Wall _wallsLeft[NUM_WALLS];
         Wall _wallsRight[NUM_WALLS];
         static const U32 NUM_MINES = 500;

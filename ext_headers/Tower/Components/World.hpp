@@ -15,10 +15,11 @@ The database is powered by sqlite3.
 #include "Tower/Managers/Director.hpp"
 #include "Tower/Managers/RenderingManager.hpp"
 #include "Tower/Objects/Player.hpp"
+#include "Tower/Objects/StaticEnvironment.hpp"
+#include "Tower/Objects/DynamicEnvironment.hpp"
 #include "Tower/Builder/Editor.hpp"
 
-
-#include <map>
+#include <vector>
 
 namespace Tower
 {
@@ -61,7 +62,8 @@ namespace Tower
         //string currentWorld;
         bool _editorActive;
         p_Player _playerOne;
-        TowerBuilder::p_Editor _editor;
-
+        p_Player _editor;
+        std::vector<p_StaticEnvironmentObject> _staticEnvironment;
+        std::vector<p_DynamicEnvironmentObject> _dynamicEnvironment;
     };
 }

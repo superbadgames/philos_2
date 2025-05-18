@@ -25,17 +25,17 @@ namespace Tower
 
         void v_Update(F32 delta) final;
 
-        void MoveForward(F32 speed);
+        void v_MoveForward(F32 speed) final;
 
-        void MoveBack(F32 speed);
+        void v_MoveBack(F32 speed) final;
 
-        void MoveRight(F32 speed);
+        void v_MoveRight(F32 speed) final;
 
-        void MoveLeft(F32 speed);
+        void v_MoveLeft(F32 speed) final;
 
-        void MoveUp(F32 speed);
+        void v_MoveUp(F32 speed) final;
 
-        void MoveDown(F32 speed);
+        void v_MoveDown(F32 speed) final;
 
     private:
         glm::vec3 _facingDirection;

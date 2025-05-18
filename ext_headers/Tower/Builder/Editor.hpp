@@ -7,6 +7,9 @@
 
 namespace TowerBuilder
 {
+    class Editor;
+    typedef shared_ptr<Editor> p_Editor;
+
     class Editor : public Tower::Player
     {
     public:
@@ -29,5 +32,4 @@ namespace TowerBuilder
         F32 _moveSpeed;
         F32 _sprintSpeedModifier;
     };
-    typedef shared_ptr<Editor> p_Editor;
 }
