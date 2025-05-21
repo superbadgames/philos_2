@@ -33,11 +33,8 @@ namespace Simulator
         // This is all basically data...
         // If this could come from data, would I even need this file?
         static const U32 NUM_WALLS = 500;
-        Philos::Creator _factory;
-        Wall _wallsLeft[NUM_WALLS];
-        Wall _wallsRight[NUM_WALLS];
         static const U32 NUM_MINES = 500;
-        Mine _mines[NUM_MINES];
+        Philos::Creator _factory;
     };
     typedef shared_ptr<SimulatorMap> p_SimulatorMap;
 }

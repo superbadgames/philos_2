@@ -44,7 +44,7 @@ namespace Tower
         // TODO: Move this to the DB, as a per project config.
         const S32 MAX_RENDERING = 2000;
         S32 _nextRenderer;
-        std::vector<p_Renderer> _renderings;
+        std::vector<p_Renderer> _renders;
 
         RenderingManager(void);
 

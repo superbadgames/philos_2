@@ -54,7 +54,6 @@ void Mine::v_Deactivate(void)
 
 void Mine::v_Init(Tower::p_Transform transform)
 {
-    _transform = transform;
     if (_renderer == nullptr)
     {
         _renderer = Tower::RenderingManager::Instance()->GetNext();
@@ -64,6 +63,15 @@ void Mine::v_Init(Tower::p_Transform transform)
     _renderer->AddModel(Tower::ModelManager::Instance()->Get("mine"));
     _renderer->AddTexture(Tower::TextureManager::Instance()->GetTexture("mine_v1"));
     _renderer->SetTransform(_transform);
+
+    // Same as in the Wall class, this is kind of a bug. I wanted to copy the whole
+    // transform, but the mines wont render if I do this.
+    //_transform = transform;
+
+    _transform->SetPosition(transform->GetPosition());
+    _transform->SetScale(transform->GetScale());
+    _transform->SetRotation(transform->GetRotation());
+
     ToggleRendering(true);
 }
 

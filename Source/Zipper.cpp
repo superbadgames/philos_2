@@ -39,8 +39,6 @@ TheZipper::~TheZipper(void)
 
 void TheZipper::v_Init(const glm::vec3& position)
 {
-
-
     if (_renderer == nullptr)
     {
         _renderer = Tower::RenderingManager::Instance()->GetNext();

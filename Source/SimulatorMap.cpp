@@ -4,10 +4,7 @@
 using namespace Simulator;
 
 SimulatorMap::SimulatorMap(void) :
-    _factory(),
-    _wallsLeft(),
-    _wallsRight(),
-    _mines()
+    _factory()
 {
 
 }
@@ -43,11 +40,13 @@ void SimulatorMap::v_Init(void)
     {
         // Left wall
         transform->SetPosition(nextPositionLeft);
-        _staticEnvironment.push_back(_factory.v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform));
+        Tower::p_StaticEnvironmentObject leftWall = _factory.v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform);
+        _staticEnvironment.push_back(leftWall);
 
         // Right wall
         transform->SetPosition(nextPositionRight);
-        _staticEnvironment.push_back(_factory.v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform));
+        Tower::p_StaticEnvironmentObject rightWall = _factory.v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform);
+        _staticEnvironment.push_back(rightWall);
 
         nextPositionLeft.z += distance;
         nextPositionRight.z += distance;
@@ -73,4 +72,3 @@ void SimulatorMap::v_Init(void)
 
     Tower::Director::Instance()->HideMouseCursor();
 }
-
