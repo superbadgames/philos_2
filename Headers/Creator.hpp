@@ -18,6 +18,10 @@ namespace Philos
         SIMULATOR_MINE = 4,
         ALL_SIMULATOR_WALLS = 5,
     };
+
+    class Creator;
+    typedef shared_ptr<Creator> p_Creator;
+
     class Creator : public Tower::ObjectFactory
     {
     public:

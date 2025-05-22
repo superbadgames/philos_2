@@ -8,6 +8,9 @@
 
 namespace Tower
 {
+    class ObjectFactory;
+    typedef shared_ptr<ObjectFactory> p_ObjectFactory;
+
     class ObjectFactory
     {
     public:

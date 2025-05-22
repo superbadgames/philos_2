@@ -18,6 +18,7 @@ The database is powered by sqlite3.
 #include "Tower/Objects/StaticEnvironment.hpp"
 #include "Tower/Objects/DynamicEnvironment.hpp"
 #include "Tower/Builder/Editor.hpp"
+#include "Tower/Objects/ObjectFactory.hpp"
 
 #include <vector>
 
@@ -58,11 +59,15 @@ namespace Tower
 
         void Render(void);
 
+        inline void SetFactory(p_ObjectFactory factory) { _factory = factory; }
+
+
     protected:
         //string currentWorld;
         bool _editorActive;
         p_Player _playerOne;
         p_Player _editor;
+        p_ObjectFactory _factory;
         std::vector<p_StaticEnvironmentObject> _staticEnvironment;
         std::vector<p_DynamicEnvironmentObject> _dynamicEnvironment;
     };

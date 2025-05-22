@@ -3,8 +3,7 @@
 
 using namespace Simulator;
 
-SimulatorMap::SimulatorMap(void) :
-    _factory()
+SimulatorMap::SimulatorMap(void)
 {
 
 }
@@ -20,8 +19,8 @@ void SimulatorMap::v_Init(void)
 {
     Tower::Director::Instance()->SetWindowBackgroundColor(glm::vec3(0.1f, 0.1f, 0.3f));
 
-    _editor = _factory.v_CreatePlayer(Philos::GAME_OBJECT_TYPES::EDITOR);
-    _playerOne = _factory.v_CreatePlayer(Philos::GAME_OBJECT_TYPES::SIMULATOR_ZIPPER);
+    _editor = _factory->v_CreatePlayer(Philos::GAME_OBJECT_TYPES::EDITOR);
+    _playerOne = _factory->v_CreatePlayer(Philos::GAME_OBJECT_TYPES::SIMULATOR_ZIPPER);
 
     // This data needs to come from the db
     F32 distance = 300.0f;
@@ -36,16 +35,17 @@ void SimulatorMap::v_Init(void)
     transform->SetRotation(rotation);
     transform->SetScale(glm::vec3(100.0f, 420.0f, 75.0f));
 
-    for (U32 i = 0; i < NUM_WALLS; ++i)
+    // Hard coded value here, this should be a client side db config entry
+    for (U32 i = 0; i < 500; ++i)
     {
         // Left wall
         transform->SetPosition(nextPositionLeft);
-        Tower::p_StaticEnvironmentObject leftWall = _factory.v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform);
+        Tower::p_StaticEnvironmentObject leftWall = _factory->v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform);
         _staticEnvironment.push_back(leftWall);
 
         // Right wall
         transform->SetPosition(nextPositionRight);
-        Tower::p_StaticEnvironmentObject rightWall = _factory.v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform);
+        Tower::p_StaticEnvironmentObject rightWall = _factory->v_CreateStaticEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_WALL, transform);
         _staticEnvironment.push_back(rightWall);
 
         nextPositionLeft.z += distance;
@@ -62,13 +62,13 @@ void SimulatorMap::v_Init(void)
     transform->SetScale(glm::vec3(5.0f, 5.0f, 5.0f));
     transform->SetRotation(rotation);
 
-    for (U32 i = 0; i < NUM_MINES; ++i)
+    for (U32 i = 0; i < 250; ++i)
     {
-        _dynamicEnvironment.push_back(_factory.v_CreateDynamicEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_MINE, transform));
+        _dynamicEnvironment.push_back(_factory->v_CreateDynamicEnvironment(Philos::GAME_OBJECT_TYPES::SIMULATOR_MINE, transform));
 
         nextPositionLeft.z += distance;
         transform->SetPosition(nextPositionLeft);
     }
 
-    Tower::Director::Instance()->HideMouseCursor();
+    _playerOne->v_Activate();
 }

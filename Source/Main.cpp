@@ -2,6 +2,7 @@
 #include <Tower/framework.h>
 
 #include "Simulator/SimulatorMap.hpp"
+#include "Creator.hpp"
 
 #include <Tower/Managers/Director.hpp>
 #include <Tower/Managers/ConfigurationManager.hpp>
@@ -67,10 +68,17 @@ int main(void)
     Tower::ModelManager::Instance()->Load("wall", "..\\..\\Assets\\Models\\Simulator\\simulator_wall_v1.glb", basic3dShader);
     Tower::ModelManager::Instance()->Load("mine", "..\\..\\Assets\\Models\\Simulator\\simulator_spike_mine_v1.glb", basic3dShader);
 
+    Philos::p_Creator createOfObjects = std::make_shared<Philos::Creator>();
+
+
     // Replace with global world, when database is working
     // Call me by my singleton name, once I know how to read a database
     Simulator::p_SimulatorMap simulatorMap = std::make_shared<Simulator::SimulatorMap>();
+    // The factory must be set before the init is called. The init will create all the objects
+    // and it can't do that without the factory.
+    simulatorMap->SetFactory(createOfObjects);
     simulatorMap->v_Init();
+
 
     while (!director->ShouldProgramClose())
     {

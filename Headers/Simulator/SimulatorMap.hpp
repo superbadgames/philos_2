@@ -17,8 +17,8 @@
 
 namespace Simulator
 {
-    // class SimulatorMap;
-    // typedef shared_ptr<SimulatorMap> p_SimulatorMap;
+    class SimulatorMap;
+    typedef shared_ptr<SimulatorMap> p_SimulatorMap;
 
     class SimulatorMap : public Tower::World
     {
@@ -28,13 +28,5 @@ namespace Simulator
         ~SimulatorMap(void) final;
 
         void v_Init(void) final;
-
-    private:
-        // This is all basically data...
-        // If this could come from data, would I even need this file?
-        static const U32 NUM_WALLS = 500;
-        static const U32 NUM_MINES = 500;
-        Philos::Creator _factory;
     };
-    typedef shared_ptr<SimulatorMap> p_SimulatorMap;
 }
