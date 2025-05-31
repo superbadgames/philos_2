@@ -21,7 +21,6 @@ namespace Tower
 
         static p_ConfigurationManager Instance(void);
 
-
     private:
         static p_ConfigurationManager _instance;
 

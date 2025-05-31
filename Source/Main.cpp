@@ -5,6 +5,7 @@
 #include "Creator.hpp"
 
 #include <Tower/Managers/Director.hpp>
+#include <Tower/Managers/DatabaseManager.hpp>
 #include <Tower/Managers/ConfigurationManager.hpp>
 #include <Tower/Managers/InputManager.hpp>
 #include <Tower/Managers/ShaderManager.hpp>
@@ -19,6 +20,9 @@ int main(void)
         std::cout << "Error! Unable to initialize." << std::endl;
         return 1;
     }
+
+    // Open the database
+    Tower::DatabaseManager::Instance()->OpenDatabase("..\\..\\Assets\\philos.db");
 
     // Should be deleted later. This code should live in the Player Objects where they are used
     //
@@ -71,6 +75,7 @@ int main(void)
     Philos::p_Creator createOfObjects = std::make_shared<Philos::Creator>();
 
 
+
     // Replace with global world, when database is working
     // Call me by my singleton name, once I know how to read a database
     Simulator::p_SimulatorMap simulatorMap = std::make_shared<Simulator::SimulatorMap>();
@@ -78,6 +83,7 @@ int main(void)
     // and it can't do that without the factory.
     simulatorMap->SetFactory(createOfObjects);
     simulatorMap->v_Init();
+
 
 
     while (!director->ShouldProgramClose())
