@@ -15,14 +15,11 @@ int main(void)
     Tower::p_Director director = Tower::Director::Instance();
 
     // Window Type, Name, Width, Height, field of view, view distance
-    if (!director->Init(Tower::WindowType::OPEN_GL, "Tower Sandbox", 1200, 800, 45.0f, 5000.0f))
+    if (!director->Init(Tower::WindowType::OPEN_GL, "..\\..\\Assets\\philos.db"))
     {
         std::cout << "Error! Unable to initialize." << std::endl;
         return 1;
     }
-
-    // Open the database
-    Tower::DatabaseManager::Instance()->OpenDatabase("..\\..\\Assets\\philos.db");
 
     // Should be deleted later. This code should live in the Player Objects where they are used
     //
@@ -30,6 +27,8 @@ int main(void)
     //
     Tower::p_InputManager inputManager = Tower::InputManager::Instance();
     inputManager->AddBinding("exit", Tower::InputButton::ESCAPE);
+
+    Tower::p_ConfigurationManager configs = Tower::ConfigurationManager::Instance();
 
 
     // Eventually, a more sophisticated method will be needed, maybe. See, there are going to be many shaders, and some

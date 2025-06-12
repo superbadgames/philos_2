@@ -3,6 +3,7 @@
 #include "pch.h"
 #include "Tower/framework.h"
 #include "Tower/Managers/Director.hpp"
+#include "Tower/Managers/ConfigurationManager.hpp"
 #include "Tower/Input/InputButtons.hpp"
 #include "Tower/Managers/InputManager.hpp"
 #include <glm/vec3.hpp>
@@ -16,7 +17,7 @@ namespace Tower
 
         ~Window(void);
 
-        bool Init(string gameName, U32 width, U32 height);
+        bool Init(void);
 
         void Cleanup(void);
 

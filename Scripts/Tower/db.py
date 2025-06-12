@@ -2,38 +2,95 @@
 - Connect to the sqlite3 database
 - Create all the tables that the Tower engine is going to assume are there, and
 populate it with the needed default values, that can be changes later per project
+
+
 """
 import sys
 import sqlite3
 
+# Update this path to the actual database for the project
 db_path = "./Assets/philos.db"
 
 
-def create_tables():
+def _run_query(query):
     try:
         db_connection = sqlite3.connect(db_path)
         cursor = db_connection.cursor()
         print("Successfully connected to the database\n")
 
-        query = """ CREATE TABLE IF NOT EXISTS Tower_Config (
-                        ID INT PRIMARY KEY NOT NULL,
-                        WINDOW_NAME TEXT NOT NULL,
-                        WINDOW_WIDTH INT NOT NULL,
-                        WINDOW_HEIGHT INT NOT NULL,
-                        FIELD_OF_VIEW REAL NULL,
-                        VIEW_DISTANCE REAL NULL,
-                        MAX_RENDERS INT NOT NULL
-                    );"""
-
         cursor.execute(query)
+
         cursor.close()
     except sqlite3.Error as error:
-        print('Error! Unable to execute the query:\n', error)
+        print('Error! ', error)
     finally:
         if db_connection:
             db_connection.close()
-# end create_default_tables
+# end _run_query
 
+
+def _run_query_with_values(query, values):
+    try:
+        db_connection = sqlite3.connect(db_path)
+        cursor = db_connection.cursor()
+        print("Successfully connected to the database\n")
+
+        cursor.executemany(query, values)
+        db_connection.commit()
+
+        cursor.close()
+    except sqlite3.Error as error:
+        print('Error! ', error)
+    finally:
+        if db_connection:
+            db_connection.close()
+# end _run_query
+
+
+def _display_table(table):
+    try:
+        db_connection = sqlite3.connect(db_path)
+        cursor = db_connection.cursor()
+        print("Successfully connected to the database\n")
+
+        cursor.execute('Select * from ' + table + ';')
+
+        for row in cursor:
+            print(row)
+
+        cursor.close()
+    except sqlite3.Error as error:
+        print('Error! ', error)
+    finally:
+        if db_connection:
+            db_connection.close()
+# end _run_query
+
+
+def create_default_tables():
+    query = '''Create Table if not exists Tower_Config(
+                    id int primary key not null,
+                    name text null,
+                    value blob null
+                );
+                '''
+    _run_query(query)
+
+    configs = [
+        ('1', 'window_width', '800'),
+        ('2', 'window_height', '600'),
+        ('3', 'max_renderers', '2000'),
+        ('4', 'field_of_view', '45'),
+        ('5', 'view_distance', '5000'),
+        ('6', 'project_name', 'Project_Philos'),
+    ]
+
+    query = '''Insert Into Tower_Config(id, name, value) Values(?,?,?)'''
+
+    _run_query_with_values(query, configs)
+
+    _display_table("Tower_Config")
+# end create_default_tables
 
 # This exports the modules, which allows the functions to be called.
 if __name__ == '__main__':

@@ -38,7 +38,7 @@ namespace Tower
 
         // Ultimately, these arguments suck. This needs to be a db file, that the director will open, and read values from. Maybe this is where
         // I will start my db implementations, once, the world is sorted out
-        bool Init(WindowType type, string name, U32 windowWidth, U32 windowHeight, F32 fov, F32 viewDistance);
+        bool Init(WindowType type, const string& db_filepath);
 
         void Cleanup(void);
 
