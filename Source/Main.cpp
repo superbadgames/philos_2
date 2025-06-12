@@ -28,9 +28,6 @@ int main(void)
     Tower::p_InputManager inputManager = Tower::InputManager::Instance();
     inputManager->AddBinding("exit", Tower::InputButton::ESCAPE);
 
-    Tower::p_ConfigurationManager configs = Tower::ConfigurationManager::Instance();
-
-
     // Eventually, a more sophisticated method will be needed, maybe. See, there are going to be many shaders, and some
     // are going to be used only for some objects. Maybe, those objects, or their managers should control when the shaders
     // are loaded, or maybe a shader manager should do that, reading which shaders to load from a data base.

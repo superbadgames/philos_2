@@ -68,24 +68,27 @@ def _display_table(table):
 
 
 def create_default_tables():
+    # Create Tower_Config table
     query = '''Create Table if not exists Tower_Config(
                     id int primary key not null,
                     name text null,
+                    type text null,
                     value blob null
                 );
                 '''
     _run_query(query)
 
+    # Insert default values
     configs = [
-        ('1', 'window_width', '800'),
-        ('2', 'window_height', '600'),
-        ('3', 'max_renderers', '2000'),
-        ('4', 'field_of_view', '45'),
-        ('5', 'view_distance', '5000'),
-        ('6', 'project_name', 'Project_Philos'),
+        ('1', 'window_width', 'U32', '800'),
+        ('2', 'window_height', 'U32', '600'),
+        ('3', 'max_renderers', 'S32', '2000'),
+        ('4', 'field_of_view', 'F32', '45'),
+        ('5', 'view_distance', 'F32', '5000'),
+        ('6', 'project_name', 'string', 'fill_in_here'),
     ]
 
-    query = '''Insert Into Tower_Config(id, name, value) Values(?,?,?)'''
+    query = '''Insert Into Tower_Config(id, name, type, value) Values(?,?,?,?)'''
 
     _run_query_with_values(query, configs)
 

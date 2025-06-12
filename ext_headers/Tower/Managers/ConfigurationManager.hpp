@@ -20,19 +20,19 @@ namespace Tower
 
         void LoadConfigsFromDB(void);
 
-        void AddConfigUINT(const string& name, U32 value);
+        void AddConfigU32(const string& name, U32 value);
 
-        void AddConfigINT(const string& name, S32 value);
+        void AddConfigS32(const string& name, S32 value);
 
-        void AddConfigFLOUT(const string& name, F32 value);
+        void AddConfigF32(const string& name, F32 value);
 
         void AddConfigString(const string& name, const string& value);
 
-        U32 GetConfigUINT(const string& name);
+        U32 GetConfigU32(const string& name);
 
-        S32 GetConfigINT(const string& name);
+        S32 GetConfigS32(const string& name);
 
-        F32 GetConfigFLOUT(const string& name);
+        F32 GetConfigF32(const string& name);
 
         const string& GetConfigString(const string& name);
 
