@@ -125,7 +125,7 @@ xcopy /y/e "$(ProjectDir)..\Tower\Resources" "$(ProjectDir)Assets\Default\"</Com
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>PHILOS_EXPORTS;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PHILOS_EXPORTS;GLFW_INCLUDE_NONE;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)Headers;$(ProjectDir)ext_headers</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
