@@ -95,6 +95,35 @@ def create_default_tables():
     _display_table("Tower_Config")
 # end create_default_tables
 
+
+def create_map_table():
+    # 0 = name of the script
+    # 1 = name of the function being called
+    # all args are next, in order
+    table_name = sys.argv[2]
+
+    query = (f"Create Table if not exists {table_name}("
+             "id int not null,"
+             "type text not null,"
+             "name text not null,"
+             "position_x real not null,"
+             "position_y real not null,"
+             "position_z real not null,"
+             "scale_x real not null,"
+             "scale_y real not null,"
+             "scale_z real not null,"
+             "rotation_angle real not null,"
+             "rotation_axis_x real not null,"
+             "rotation_axis_y real not null,"
+             "rotation_axis_z real not null);"
+            )
+
+    _run_query(query)
+   # _display_table(table_name)
+    print("Finished creating new Map table\n\n")
+# end create_map_table
+
+
 # This exports the modules, which allows the functions to be called.
 if __name__ == '__main__':
     globals()[sys.argv[1]]()

@@ -52,6 +52,7 @@ void SimulatorMap::v_Init(void)
         nextPositionRight.z += distance;
     }
 
+    // begin create mines
     distance = 200.0f;
     nextPositionLeft = glm::vec3(10.0f, 50.0f, distance);
 
