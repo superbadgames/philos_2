@@ -10,15 +10,6 @@
 
 namespace Philos
 {
-    enum GAME_OBJECT_TYPES
-    {
-        EDITOR = 1,
-        SIMULATOR_ZIPPER = 2,
-        SIMULATOR_WALL = 3,
-        SIMULATOR_MINE = 4,
-        ALL_SIMULATOR_WALLS = 5,
-    };
-
     class Creator;
     typedef shared_ptr<Creator> p_Creator;
 
@@ -29,11 +20,11 @@ namespace Philos
 
         ~Creator(void) final;
 
-        Tower::p_Player v_CreatePlayer(U32 typeId) final;
+        Tower::p_Player v_CreatePlayer(const string& typeName) final;
 
-        Tower::p_StaticEnvironmentObject v_CreateStaticEnvironment(U32 typeId, Tower::p_Transform transform) final;
+        Tower::p_StaticEnvironmentObject v_CreateStaticEnvironment(const string& typeName, Tower::p_Transform transform) final;
 
-        Tower::p_DynamicEnvironmentObject v_CreateDynamicEnvironment(U32 typeId, Tower::p_Transform transform) final;
+        Tower::p_DynamicEnvironmentObject v_CreateDynamicEnvironment(const string& typeName, Tower::p_Transform transform) final;
 
 
     private:

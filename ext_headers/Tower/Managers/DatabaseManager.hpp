@@ -4,8 +4,11 @@
 #include "Tower/framework.h"
 #include "sqlite3/sqlite3.h"
 
+#include "Tower/Components/World.hpp"
+
 namespace Tower
 {
+    class World;
     class DatabaseManager;
     typedef shared_ptr<DatabaseManager> p_DatabaseManager;
 
@@ -19,6 +22,8 @@ namespace Tower
         inline void SetDB(const string& path) { _dbPath = path; }
 
         void LoadConfigurations(int(*callback)(void* inputObj, int argCount, char** argValues, char** colName));
+
+        void LoadMap(const string& name, World* world, int(*callback)(void* inputObj, int argCount, char** argValues, char** colName));
 
     private:
         static p_DatabaseManager _instance;

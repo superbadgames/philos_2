@@ -19,11 +19,13 @@ The database is powered by sqlite3.
 #include "Tower/Objects/DynamicEnvironment.hpp"
 #include "Tower/Builder/Editor.hpp"
 #include "Tower/Objects/ObjectFactory.hpp"
+#include "Tower/Managers/DatabaseManager.hpp"
 
 #include <vector>
 
 namespace Tower
 {
+    class DatabaseManager;
     class World;
     typedef shared_ptr<World> p_World;
 
@@ -35,18 +37,7 @@ namespace Tower
 
         virtual ~World(void);
 
-        // TODO:
-        // Filepath to a database
-        // Database reading function
-        //void ChangeMap(const string& filepath);
-        // For now, I don't have the data base working yet, so
-        // just make the maps like before, an interface, with
-        // a list of objects to make. Use the entity manager,
-        // and let the map do all the magic from there
-        // By magic, I mean that each object defined in the
-        // Project will have an _entity handle, and that will
-        // be used for all the rendering.
-        virtual void v_Init(void) = 0;
+        void Init(p_ObjectFactory factory, const string& playerType, bool createEditor);
 
         // TODO:
         // Until a process system has been put into place, just call
@@ -57,10 +48,11 @@ namespace Tower
         // Later, when the map db is working, save the map to file
         //void SaveMap(void);
 
+        void LoadMap(const string& name);
+
         void Render(void);
 
         inline void SetFactory(p_ObjectFactory factory) { _factory = factory; }
-
 
     protected:
         //string currentWorld;
@@ -70,5 +62,8 @@ namespace Tower
         p_ObjectFactory _factory;
         std::vector<p_StaticEnvironmentObject> _staticEnvironment;
         std::vector<p_DynamicEnvironmentObject> _dynamicEnvironment;
+        U32 _numObjectsCreated;
+
+        static int _LoadMapDBCallback(void* inputObj, int argCount, char** argValues, char** colName);
     };
 }

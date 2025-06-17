@@ -1,7 +1,6 @@
 #include "pch.h"
 #include <Tower/framework.h>
 
-#include "Simulator/SimulatorMap.hpp"
 #include "Creator.hpp"
 
 #include <Tower/Managers/Director.hpp>
@@ -9,6 +8,7 @@
 #include <Tower/Managers/ConfigurationManager.hpp>
 #include <Tower/Managers/InputManager.hpp>
 #include <Tower/Managers/ShaderManager.hpp>
+#include <Tower/Components/World.hpp>
 
 int main(void)
 {
@@ -70,16 +70,21 @@ int main(void)
 
     Philos::p_Creator createOfObjects = std::make_shared<Philos::Creator>();
 
+    Tower::World world{};
+    world.Init(createOfObjects, "zipper", "editor");
 
 
     // Replace with global world, when database is working
     // Call me by my singleton name, once I know how to read a database
-    Simulator::p_SimulatorMap simulatorMap = std::make_shared<Simulator::SimulatorMap>();
+    //Simulator::p_SimulatorMap simulatorMap = std::make_shared<Simulator::SimulatorMap>();
     // The factory must be set before the init is called. The init will create all the objects
     // and it can't do that without the factory.
-    simulatorMap->SetFactory(createOfObjects);
-    simulatorMap->v_Init();
+    //simulatorMap->SetFactory(createOfObjects);
+    //simulatorMap->v_Init();
 
+    // Simulator bg color
+    Tower::Director::Instance()->SetWindowBackgroundColor(glm::vec3(0.1f, 0.1f, 0.3f));
+    world.LoadMap("simulator_map");
 
 
     while (!director->ShouldProgramClose())
@@ -94,8 +99,8 @@ int main(void)
         }
 
 
-        simulatorMap->Update(director->GetDeltaTime());
-        simulatorMap->Render();
+        world.Update(director->GetDeltaTime());
+        world.Render();
 
         director->EndFrame();
     }

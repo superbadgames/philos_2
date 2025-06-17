@@ -18,11 +18,11 @@ namespace Tower
 
         virtual ~ObjectFactory(void) {};
 
-        p_Player virtual v_CreatePlayer(U32 typeId) = 0;
+        p_Player virtual v_CreatePlayer(const string& typeName) = 0;
 
-        p_StaticEnvironmentObject virtual v_CreateStaticEnvironment(U32 typeId, p_Transform transform) = 0;
+        p_StaticEnvironmentObject virtual v_CreateStaticEnvironment(const string& typeName, p_Transform transform) = 0;
 
-        p_DynamicEnvironmentObject virtual v_CreateDynamicEnvironment(U32 typeId, p_Transform transform) = 0;
+        p_DynamicEnvironmentObject virtual v_CreateDynamicEnvironment(const string& typeName, p_Transform transform) = 0;
 
     };
 }

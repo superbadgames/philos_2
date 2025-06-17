@@ -80,12 +80,12 @@ def create_default_tables():
 
     # Insert default values
     configs = [
-        ('1', 'window_width', 'U32', '800'),
-        ('2', 'window_height', 'U32', '600'),
+        ('1', 'window_width', 'U32', '1200'),
+        ('2', 'window_height', 'U32', '800'),
         ('3', 'max_renderers', 'S32', '2000'),
         ('4', 'field_of_view', 'F32', '45'),
         ('5', 'view_distance', 'F32', '5000'),
-        ('6', 'project_name', 'string', 'fill_in_here'),
+        ('6', 'project_name', 'string', 'Project_Philos')
     ]
 
     query = '''Insert Into Tower_Config(id, name, type, value) Values(?,?,?,?)'''
@@ -96,15 +96,14 @@ def create_default_tables():
 # end create_default_tables
 
 
-def create_map_table():
-    # 0 = name of the script
-    # 1 = name of the function being called
-    # all args are next, in order
+def create_map():
     table_name = sys.argv[2]
+    print(f"table name = {table_name}")
 
     query = (f"Create Table if not exists {table_name}("
              "id int not null,"
              "type text not null,"
+             "parent_type text not null,"
              "name text not null,"
              "position_x real not null,"
              "position_y real not null,"
@@ -119,9 +118,9 @@ def create_map_table():
             )
 
     _run_query(query)
-   # _display_table(table_name)
+    _display_table(table_name)
     print("Finished creating new Map table\n\n")
-# end create_map_table
+# end create_map_tablele
 
 
 # This exports the modules, which allows the functions to be called.
