@@ -8,6 +8,8 @@
 #include <Tower/Managers/ShaderManager.hpp>
 #include <Tower/Managers/TextureManager.hpp>
 #include <Tower/Managers/InputManager.hpp>
+#include <Tower/Systems/PhysicsSystem.hpp>
+#include <Tower/Physics/Particle.hpp>
 #include <GLFW/glfw3.h>
 
 namespace Simulator
@@ -36,10 +38,12 @@ namespace Simulator
 
 
     private:
-        const S32 _maxThrottle = 5;
-        S32 _throttleLevel;
+        F32 _maxThrottle;
+        F32 _throttleLevel;
         F32 _throttleMultiplier;
-        const F32 _turnMultiplier = 500.0f;
+        F32 _turnMultiplier;
+        F32 _maxVelocity;
         bool _activeControl;
+        Tower::p_Particle _physicsBody;
     };
 }

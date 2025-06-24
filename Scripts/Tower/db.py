@@ -82,7 +82,7 @@ def create_default_tables():
     configs = [
         ('1', 'window_width', 'U32', '1200'),
         ('2', 'window_height', 'U32', '800'),
-        ('3', 'max_renderers', 'S32', '2000'),
+        ('3', 'max_entities', 'U32', '2000'),
         ('4', 'field_of_view', 'F32', '45'),
         ('5', 'view_distance', 'F32', '5000'),
         ('6', 'project_name', 'string', 'Project_Philos')

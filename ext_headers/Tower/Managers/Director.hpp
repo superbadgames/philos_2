@@ -6,7 +6,7 @@
 #include "Tower/Rendering/Window.hpp"
 #include "Tower/Rendering/Shader.hpp"
 #include "Tower/Managers/DatabaseManager.hpp"
-#include "Tower/Managers/RenderingManager.hpp"
+#include "Tower/Systems/RenderingSystem.hpp"
 #include "Tower/Managers/InputManager.hpp"
 #include "Tower/Managers/TextureManager.hpp"
 #include "Tower/Managers/ShaderManager.hpp"

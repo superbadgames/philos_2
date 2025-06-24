@@ -56,7 +56,7 @@ void Mine::v_Init(Tower::p_Transform transform)
 {
     if (_renderer == nullptr)
     {
-        _renderer = Tower::RenderingManager::Instance()->GetNext();
+        _renderer = Tower::RenderingSystem::Instance()->GetNext();
     }
 
     _renderer->AddShader(Tower::ShaderManager::Instance()->GetShader("basic3d"));

@@ -13,7 +13,7 @@ The database is powered by sqlite3.
 #include "pch.h"
 #include "Tower/framework.h"
 #include "Tower/Managers/Director.hpp"
-#include "Tower/Managers/RenderingManager.hpp"
+#include "Tower/Systems/RenderingSystem.hpp"
 #include "Tower/Objects/Player.hpp"
 #include "Tower/Objects/StaticEnvironment.hpp"
 #include "Tower/Objects/DynamicEnvironment.hpp"

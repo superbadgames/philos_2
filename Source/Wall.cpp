@@ -33,7 +33,7 @@ void Wall::v_Init(Tower::p_Transform transform)
 
     if (_renderer == nullptr)
     {
-        _renderer = Tower::RenderingManager::Instance()->GetNext();
+        _renderer = Tower::RenderingSystem::Instance()->GetNext();
     }
 
 
