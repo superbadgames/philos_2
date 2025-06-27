@@ -96,20 +96,20 @@ void TheZipper::v_Deactivate(void)
 
 void TheZipper::v_Update(F32 delta)
 {
-    //glm::vec2 mouseInput = Tower::InputManager::Instance()->GetMouseInputOffset();
-
     glm::vec3 acceleration = _physicsBody->GetAcceleration();
     if (_active)
     {
         if (Tower::InputManager::Instance()->IsBindingPressed("zipper_throttleUp") && _throttleLevel < _maxThrottle)
         {
             ++_throttleLevel;
-            acceleration += glm::vec3(0.0f, 0.0f, _throttleLevel * _throttleMultiplier);
+            acceleration += glm::vec3(0.0f, 0.0f, _throttleMultiplier);
+            std::cout << "Throttle level now set to: " << _throttleLevel << std::endl;
         }
         if (Tower::InputManager::Instance()->IsBindingPressed("zipper_throttleDown") && _throttleLevel > -_maxThrottle)
         {
             --_throttleLevel;
-            acceleration += glm::vec3(0.0f, 0.0f, _throttleLevel * _throttleMultiplier);
+            acceleration += glm::vec3(0.0f, 0.0f, -_throttleMultiplier);
+            std::cout << "Throttle level now set to: " << _throttleLevel << std::endl;
         }
         if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("zipper_move_left"))
         {
@@ -140,13 +140,19 @@ void TheZipper::v_Update(F32 delta)
         if (Tower::InputManager::Instance()->IsBindingPressed("zipper_fullstop"))
         {
             _throttleLevel = 0;
-            acceleration = glm::vec3(0.0f, 0.0f, -_throttleLevel * _throttleMultiplier * _throttleMultiplier);
+            _physicsBody->SetVelocity(glm::vec3(0.0f));
+            _physicsBody->SetAcceleration(glm::vec3(0.0f));
+            std::cout << "Full Stop!\n";
+            return;
         }
     }
 
     if (_physicsBody->GetVelocity().length() >= _maxVelocity)
     {
-        acceleration = glm::vec3(0.0f);
+        if (acceleration.z > 0)
+        {
+            acceleration.z = 0.0f;
+        }
     }
 
     _physicsBody->SetAcceleration(acceleration);

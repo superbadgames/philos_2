@@ -51,6 +51,9 @@ namespace Tower
 
         inline const glm::vec3& GetVelocity(void) const { return _velocity; }
 
+        // Use with caution! This should really only be changed by the physics system
+        inline void SetVelocity(const glm::vec3& velocity) { _velocity = velocity; }
+
         void SetMass(F32 mass);
 
         void Integrate(F32 delta);
