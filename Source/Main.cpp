@@ -10,6 +10,9 @@
 #include <Tower/Managers/ShaderManager.hpp>
 #include <Tower/Components/World.hpp>
 
+#include <Tower/UI/Font.hpp>
+#include <Tower/UI/Text.hpp>
+
 int main(void)
 {
     Tower::p_Director director = Tower::Director::Instance();
@@ -73,19 +76,17 @@ int main(void)
     Tower::World world{};
     world.Init(createOfObjects, "zipper", "editor");
 
-
-    // Replace with global world, when database is working
-    // Call me by my singleton name, once I know how to read a database
-    //Simulator::p_SimulatorMap simulatorMap = std::make_shared<Simulator::SimulatorMap>();
-    // The factory must be set before the init is called. The init will create all the objects
-    // and it can't do that without the factory.
-    //simulatorMap->SetFactory(createOfObjects);
-    //simulatorMap->v_Init();
-
     // Simulator bg color
     Tower::Director::Instance()->SetWindowBackgroundColor(glm::vec3(0.1f, 0.1f, 0.3f));
     world.LoadMap("simulator_map");
 
+    //
+    // Font testing area
+    //
+    // Filepath to a font
+    // When one value is used, it's assumed to be nxn, hence, 64x64
+    Tower::p_Font font = std::make_shared<Tower::Font>();
+    font->Load("..\\..\\Assets\\Default\\Fonts\\arial.ttf", 64);
 
     while (!director->ShouldProgramClose())
     {
