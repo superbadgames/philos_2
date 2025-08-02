@@ -11,12 +11,17 @@ No new entities are ever created.
 
 The Manager also iterates over each entity to call Render
 
+The Rendering System will also handle Text Rendering. Glyphs, and text rendering are a special case, and really deserve their
+own code. I thought about making a TextRenderingSystem, it makes more sense to instead make special routines in the Rendering
+System to handle the special case of text rendering.
+
 */
-# pragma once
+#pragma once
 #include "pch.h"
 #include "Tower/framework.h"
 #include "Tower/Managers/ConfigurationManager.hpp"
 #include "Tower/Rendering/Renderer.hpp"
+#include "Tower/UI/Glyph.hpp"
 
 #include <vector>
 
@@ -36,7 +41,7 @@ namespace Tower
 
         p_Renderer GetEntity(U32 id);
 
-        void Render(const glm::mat4& viewMatrix);
+        void Render(const glm::mat4 &viewMatrix);
 
         void ResetEntities(void);
 
@@ -46,6 +51,7 @@ namespace Tower
         U32 MAX_ENTITIES;
         U32 _nextRenderer;
         std::vector<p_Renderer> _renders;
+        std::vector<p_Glyph> _glyphs;
 
         RenderingSystem(void);
 

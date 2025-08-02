@@ -30,8 +30,6 @@ namespace Tower
 
         void DisableWireframeMode(void);
 
-        // void SetColor(const glm::vec4& color);
-
         inline void SetShader(p_Shader shader) { _shader = shader; }
 
         inline void SetTexture(p_Texture texture) { _texture = texture; }
@@ -41,8 +39,10 @@ namespace Tower
         p_Texture _texture;
         p_Shader _shader;
 
+        // aiNode is part of Assimp
         void _ProcessNode(aiNode* node, const aiScene* scene);
 
+        // aiMesh is also part of Assimp
         p_Mesh _ProcessMesh(aiMesh* mesh, const aiScene* scene);
     };
     typedef shared_ptr<Model> p_Model;
