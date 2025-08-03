@@ -20,9 +20,7 @@ namespace Tower
 
         ~Model(void);
 
-        void LoadFromFile(p_Shader shader, const string& filepath);
-
-        void LoadFromFile(const string& filepath);
+        void LoadFromFile(const string& filepath, p_Shader shader);
 
         void Draw(void);
 
@@ -30,20 +28,17 @@ namespace Tower
 
         void DisableWireframeMode(void);
 
-        inline void SetShader(p_Shader shader) { _shader = shader; }
-
         inline void SetTexture(p_Texture texture) { _texture = texture; }
 
     private:
         std::vector<p_Mesh> _meshes;
         p_Texture _texture;
-        p_Shader _shader;
 
         // aiNode is part of Assimp
-        void _ProcessNode(aiNode* node, const aiScene* scene);
+        void _ProcessNode(aiNode* node, const aiScene* scene, p_Shader shader);
 
         // aiMesh is also part of Assimp
-        p_Mesh _ProcessMesh(aiMesh* mesh, const aiScene* scene);
+        p_Mesh _ProcessMesh(aiMesh* mesh, const aiScene* scene, p_Shader shader);
     };
     typedef shared_ptr<Model> p_Model;
 }
