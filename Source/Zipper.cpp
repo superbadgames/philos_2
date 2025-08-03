@@ -10,7 +10,9 @@ TheZipper::TheZipper(void) :
     _turnMultiplier(15.0f),
     _activeControl(true),
     _physicsBody(nullptr),
-    _maxVelocity(100.0f)
+    _maxForwardVelocity(100.0f),
+    _maxVerticalVelocity(25.0f),
+    _maxHorizontalVelocity(25.0f)
 {
 
 }
@@ -27,7 +29,7 @@ TheZipper::TheZipper(const TheZipper& copy) :
 
 TheZipper& TheZipper::operator=(const TheZipper& copy)
 {
-    if (this == &copy) return *this;
+    if(this == &copy) return *this;
 
     Player::operator=(copy);
 
@@ -46,7 +48,7 @@ TheZipper::~TheZipper(void)
 
 void TheZipper::v_Init(const glm::vec3& position)
 {
-    if (_renderer == nullptr)
+    if(_renderer == nullptr)
     {
         _renderer = Tower::RenderingSystem::Instance()->GetNext();
     }
@@ -97,47 +99,59 @@ void TheZipper::v_Deactivate(void)
 void TheZipper::v_Update(F32 delta)
 {
     glm::vec3 acceleration = _physicsBody->GetAcceleration();
-    if (_active)
+    if(_active)
     {
-        if (Tower::InputManager::Instance()->IsBindingPressed("zipper_throttleUp") && _throttleLevel < _maxThrottle)
+        if(Tower::InputManager::Instance()->IsBindingPressed("zipper_throttleUp") && _throttleLevel < _maxThrottle)
         {
             ++_throttleLevel;
             acceleration += glm::vec3(0.0f, 0.0f, _throttleMultiplier);
             std::cout << "Throttle level now set to: " << _throttleLevel << std::endl;
         }
-        if (Tower::InputManager::Instance()->IsBindingPressed("zipper_throttleDown") && _throttleLevel > -_maxThrottle)
+        if(Tower::InputManager::Instance()->IsBindingPressed("zipper_throttleDown") && _throttleLevel > -_maxThrottle)
         {
             --_throttleLevel;
             acceleration += glm::vec3(0.0f, 0.0f, -_throttleMultiplier);
             std::cout << "Throttle level now set to: " << _throttleLevel << std::endl;
         }
-        if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("zipper_move_left"))
+        if(Tower::InputManager::Instance()->IsBindingPressedOrHeld("zipper_move_left"))
         {
-            acceleration += glm::vec3(_turnMultiplier, 0.0f, 0.0f);
+            if(acceleration.x <= _maxHorizontalVelocity)
+            {
+                acceleration += glm::vec3(_turnMultiplier, 0.0f, 0.0f);
+            }
         }
-        else if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("zipper_move_right"))
+        else if(Tower::InputManager::Instance()->IsBindingPressedOrHeld("zipper_move_right"))
         {
-            acceleration += glm::vec3(-_turnMultiplier, 0.0f, 0.0f);
+            if(acceleration.x > -_maxHorizontalVelocity)
+            {
+                acceleration += glm::vec3(-_turnMultiplier, 0.0f, 0.0f);
+            }
         }
         else
         {
             acceleration = glm::vec3(0.0f, acceleration.y, acceleration.z);
         }
 
-        if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("zipper_up"))
+        if(Tower::InputManager::Instance()->IsBindingPressedOrHeld("zipper_up"))
         {
-            acceleration += glm::vec3(0.0f, _turnMultiplier, 0.0f);
+            if(acceleration.y <= _maxVerticalVelocity)
+            {
+                acceleration += glm::vec3(0.0f, _turnMultiplier, 0.0f);
+            }
         }
-        else if (Tower::InputManager::Instance()->IsBindingPressedOrHeld("zipper_down"))
+        else if(Tower::InputManager::Instance()->IsBindingPressedOrHeld("zipper_down"))
         {
-            acceleration += glm::vec3(0.0f, -_turnMultiplier, 0.0f);
+            if(acceleration.y >= -_maxVerticalVelocity)
+            {
+                acceleration += glm::vec3(0.0f, -_turnMultiplier, 0.0f);
+            }
         }
         else
         {
             acceleration = glm::vec3(acceleration.x, 0.0f, acceleration.z);
         }
 
-        if (Tower::InputManager::Instance()->IsBindingPressed("zipper_fullstop"))
+        if(Tower::InputManager::Instance()->IsBindingPressed("zipper_fullstop"))
         {
             _throttleLevel = 0;
             _physicsBody->SetVelocity(glm::vec3(0.0f));
@@ -147,9 +161,9 @@ void TheZipper::v_Update(F32 delta)
         }
     }
 
-    if (_physicsBody->GetVelocity().length() >= _maxVelocity)
+    if(_physicsBody->GetVelocity().length() >= _maxForwardVelocity)
     {
-        if (acceleration.z > 0)
+        if(acceleration.z > 0)
         {
             acceleration.z = 0.0f;
         }

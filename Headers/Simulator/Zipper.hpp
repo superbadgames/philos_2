@@ -42,7 +42,9 @@ namespace Simulator
         F32 _throttleLevel;
         F32 _throttleMultiplier;
         F32 _turnMultiplier;
-        F32 _maxVelocity;
+        F32 _maxForwardVelocity;
+        F32 _maxVerticalVelocity;
+        F32 _maxHorizontalVelocity;
         bool _activeControl;
         Tower::p_Particle _physicsBody;
     };

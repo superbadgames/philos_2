@@ -1,6 +1,8 @@
 {
   "cSpell.words": ["opengl"],
   "cSpell.ignoreWords": [
+    "NDEBUG",
+    "NODEFAULTLIB",
     "g",
     "get",
     "gl",
