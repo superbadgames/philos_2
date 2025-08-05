@@ -26,6 +26,8 @@ namespace Tower
         std::unordered_map<string, p_Shader> _shaders;
 
         ShaderManager(void);
+
+        void _LoadDefaultShaders(void);
     };
     typedef shared_ptr<ShaderManager> p_ShaderManager;
 }

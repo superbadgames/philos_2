@@ -11,7 +11,7 @@
 #include <Tower/Components/World.hpp>
 
 #include <Tower/UI/Font.hpp>
-#include <Tower/UI/Text.hpp>
+#include <Tower/UI/UIText.hpp>
 
 int main(void)
 {
@@ -88,7 +88,15 @@ int main(void)
     Tower::p_Font font = std::make_shared<Tower::Font>();
     font->Load("..\\..\\Assets\\Default\\Fonts\\arial.ttf", 64);
 
-    while (!director->ShouldProgramClose())
+    Tower::Color helloWorldColor(0.0f, 0.3f, 1.0f);
+    Tower::UIText helloWorldText {};
+    helloWorldText.Init(font, "Hello World!", helloWorldColor);
+    helloWorldText.SetScale(glm::vec3(50.0f, 50.0f, 0.0f));
+    helloWorldText.SetPosition(glm::vec2(-500.0f, 500.0f));
+
+
+
+    while(!director->ShouldProgramClose())
     {
         director->StartFrame();
 
@@ -102,6 +110,7 @@ int main(void)
 
         world.Update(director->GetDeltaTime());
         world.Render();
+        helloWorldText.Draw(world.GetPlayerOne()->GetCamera()->GetOrthographicMatrix());
 
         director->EndFrame();
     }

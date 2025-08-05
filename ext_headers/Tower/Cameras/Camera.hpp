@@ -47,7 +47,9 @@ namespace Tower
 
         inline const glm::mat4& GetViewMatrix(void) const { return _viewMatrix; }
 
-        inline const glm::mat4& GetProjectionMatrix(void) const { return _projectionMatrix; }
+        inline const glm::mat4& GetPerspectiveMatrix(void) const { return _perspectiveMatrix; }
+
+        inline const glm::mat4& GetOrthographicMatrix(void) const { return _orthographicMatrix; }
 
         inline const glm::vec3& GetPosition(void) const { return _position; }
 
@@ -56,7 +58,8 @@ namespace Tower
 
     protected:
         glm::mat4 _viewMatrix;
-        glm::mat4 _projectionMatrix;
+        glm::mat4 _perspectiveMatrix;
+        glm::mat4 _orthographicMatrix;
         glm::vec3 _position;
 
         void _InitOrthographic(F32 screenWidth, F32 screenHeight, F32 viewDistance);

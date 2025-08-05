@@ -19,6 +19,10 @@ namespace Tower
     public:
         FPSCamera(void);
 
+        FPSCamera(const FPSCamera& copy);
+
+        FPSCamera& operator=(const FPSCamera& copy);
+
         ~FPSCamera(void) final;
 
         void v_Init(void) final;

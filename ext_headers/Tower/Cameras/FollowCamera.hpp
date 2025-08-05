@@ -16,6 +16,10 @@ namespace Tower
     public:
         FollowCamera(void);
 
+        FollowCamera(const FollowCamera& copy);
+
+        FollowCamera& operator=(const FollowCamera& copy);
+
         ~FollowCamera(void) final;
 
         void v_Init(void) final;

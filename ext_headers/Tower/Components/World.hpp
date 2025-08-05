@@ -54,6 +54,8 @@ namespace Tower
 
         inline void SetFactory(p_ObjectFactory factory) { _factory = factory; }
 
+        inline p_Player GetPlayerOne(void) const { return _playerOne; }
+
     protected:
         //string currentWorld;
         bool _editorActive;
