@@ -9,26 +9,43 @@ namespace Tower
 {
     struct CharacterData
     {
+        char character;
         p_Texture texture;
         glm::ivec2 size;
         glm::ivec2 bearing;
         U32 advance;
 
         CharacterData(void) :
+        character(),
         texture(nullptr),
         size(),
         bearing(),
         advance()
         {}
 
-        CharacterData(const CharacterData& character) :
-        texture(character.texture),
-        size(character.size),
-        bearing(character.bearing),
-        advance(character.advance)
+        CharacterData(const CharacterData& copy) :
+        character(copy.character),
+        texture(copy.texture),
+        size(copy.size),
+        bearing(copy.bearing),
+        advance(copy.advance)
         {}
 
-        CharacterData(p_Texture inTexture, const glm::ivec2& inSize, const glm::ivec2& inBearing, U32 inAdvanced) :
+        CharacterData& operator=(const CharacterData& copy)
+        {
+            if(this == &copy) return *this;
+
+            character = copy.character;
+            texture = copy.texture;
+            size = copy.size;
+            bearing = copy.bearing;
+            advance = copy.advance;
+
+            return *this;
+        }
+
+        CharacterData(char c, p_Texture inTexture, const glm::ivec2& inSize, const glm::ivec2& inBearing, U32 inAdvanced) :
+        character(c),
         texture(inTexture),
         size(inSize),
         bearing(inBearing),
