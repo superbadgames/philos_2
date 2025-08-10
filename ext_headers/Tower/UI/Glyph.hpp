@@ -21,13 +21,17 @@ namespace Tower
 
         void Draw(void);
 
-        void SetPosition(const glm::vec3 &pos);
-
-        const glm::vec3& GetPosition(void) const;
-
         inline const glm::ivec2& GetBearing(void) const { return _characterData.bearing; }
 
         inline const glm::ivec2& GetSize(void) const { return _characterData.size; }
+
+        inline void SetTransform(const Transform& transform) { _transform = transform; }
+
+        inline const Transform& GetTransform(void) { return _transform; }
+
+        inline void SetPosition(const glm::vec3& position) { _transform.SetPosition(position); }
+
+        inline void SetScale(const glm::vec3& scale) { _transform.SetScale(scale); }
 
     private:
         // Vertex Array Object
@@ -42,5 +46,13 @@ namespace Tower
         std::vector<F32> _uvs;
         std::vector<U32> _indices;
         CharacterData _characterData;
+        // Only holds the scale, to change the shape of the
+        // quad each glyph requires for drawing
+        Transform _transform;
+
+        // NO COPY!
+        Glyph(const Glyph& copy);
+
+        Glyph& operator=(const Glyph& copy);
     };
 }

@@ -38,6 +38,10 @@ namespace Tower
     public:
         Font(void);
 
+        Font(const Font& copy);
+
+        Font& operator=(const Font& copy);
+
         ~Font(void);
 
         // A width of 0 will allow the width to dynamically scaled with the height
@@ -49,7 +53,6 @@ namespace Tower
 
     private:
         U32 _numCharacters;
-        std::map<char, CharacterData> _characters;
         std::map<char, p_Glyph> _glyphs;
 
         void _LoadCharacterData(const string& filepath, U32 height, U32 width);

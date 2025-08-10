@@ -37,12 +37,10 @@ namespace Tower
         void SetScale(const glm::vec3& scale);
 
     private:
-        p_Shader _shader;
         p_Font _font;
         string _message;
         Color _color;
         Transform _transform;
-        Transform _glyphTransform;
         // Cache the glyph shader
         // make this configurable later
         p_Shader _glyphShader;

@@ -24,6 +24,8 @@ int main(void)
         return 1;
     }
 
+    Tower::p_ShaderManager shaderManager = Tower::ShaderManager::Instance();
+
     // Should be deleted later. This code should live in the Player Objects where they are used
     //
     // Initialize Input Bindings
@@ -41,7 +43,7 @@ int main(void)
     //
     Tower::p_Shader basic3dShader = std::make_shared<Tower::Shader>();
     basic3dShader->Load("..\\..\\Assets\\Default\\Shaders\\basic_vertex.glsl", "..\\..\\Assets\\Default\\Shaders\\basic_fragment.glsl");
-    Tower::ShaderManager::Instance()->RegisterShader("basic3d", basic3dShader);
+    shaderManager->RegisterShader("basic3d", basic3dShader);
 
     // Very much like the shaders, maybe a better way to add a deal with new textures is needed. If these were also entries
     // in a data base, it would give me more options.
@@ -91,8 +93,9 @@ int main(void)
     Tower::Color helloWorldColor(0.0f, 0.3f, 1.0f);
     Tower::UIText helloWorldText {};
     helloWorldText.Init(font, "Hello World!", helloWorldColor);
-    helloWorldText.SetScale(glm::vec3(25.0f, 25.0f, 0.0f));
-    helloWorldText.SetPosition(glm::vec2(200.0f, 200.0f));
+    helloWorldText.SetScale(glm::vec3(1.0f, 1.0f, 0.0f));
+    helloWorldText.SetPosition(glm::vec2(0.0f, 0.0f));
+
 
 
 
@@ -110,6 +113,7 @@ int main(void)
 
         world.Update(director->GetDeltaTime());
         world.Render();
+
         helloWorldText.Draw(world.GetPlayerOne()->GetCamera()->GetOrthographicMatrix());
 
         director->EndFrame();
