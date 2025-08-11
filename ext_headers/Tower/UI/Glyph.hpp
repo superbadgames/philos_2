@@ -25,6 +25,8 @@ namespace Tower
 
         inline const glm::ivec2& GetSize(void) const { return _characterData.size; }
 
+        inline U32 GetAdvance(void) const { return _characterData.advance; }
+
         inline void SetTransform(const Transform& transform) { _transform = transform; }
 
         inline const Transform& GetTransform(void) { return _transform; }

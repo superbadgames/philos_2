@@ -13,7 +13,7 @@ namespace Tower
         p_Texture texture;
         glm::ivec2 size;
         glm::ivec2 bearing;
-        F32 advance;
+        U32 advance;
 
         CharacterData(void) :
         character(),
@@ -44,7 +44,7 @@ namespace Tower
             return *this;
         }
 
-        CharacterData(char c, p_Texture inTexture, const glm::ivec2& inSize, const glm::ivec2& inBearing, F32 inAdvanced) :
+        CharacterData(char c, p_Texture inTexture, const glm::ivec2& inSize, const glm::ivec2& inBearing, U32 inAdvanced) :
         character(c),
         texture(inTexture),
         size(inSize),
