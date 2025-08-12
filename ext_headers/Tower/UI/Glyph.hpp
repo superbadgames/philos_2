@@ -21,6 +21,8 @@ namespace Tower
 
         void Draw(void);
 
+        void SetPosition(const glm::vec3& position);
+
         inline const glm::ivec2& GetBearing(void) const { return _characterData.bearing; }
 
         inline const glm::ivec2& GetSize(void) const { return _characterData.size; }
@@ -31,11 +33,9 @@ namespace Tower
 
         inline const Transform& GetTransform(void) { return _transform; }
 
-        inline void SetPosition(const glm::vec3& position) { _transform.SetPosition(position); }
 
-        inline void SetScale(const glm::vec3& scale) { _transform.SetScale(scale); }
 
-    private:
+        private:
         // Vertex Array Object
         U32 _vao;
         // Vertex Buffer Object
@@ -56,5 +56,8 @@ namespace Tower
         Glyph(const Glyph& copy);
 
         Glyph& operator=(const Glyph& copy);
+
+        // DO NOT SET SCALE! This should come from the character data.
+        void SetScale(const glm::vec3& scale);
     };
 }

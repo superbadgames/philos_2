@@ -92,8 +92,8 @@ int main(void)
 
     Tower::Color helloWorldColor(0.0f, 0.3f, 1.0f);
     Tower::UIText helloWorldText {};
-    helloWorldText.Init(font, "Hello WOrld", helloWorldColor);
-    helloWorldText.SetPosition(glm::vec2(100.0f, 50.0f));
+    helloWorldText.Init(font, "You Win!", helloWorldColor);
+    helloWorldText.SetPosition(glm::vec2(100.0f, 150.0f));
 
 
 

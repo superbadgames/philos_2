@@ -46,7 +46,7 @@ namespace Tower
         p_Shader _glyphShader;
         // Cache the glyphs required
         std::map<char, p_Glyph> _glyphs;
-        std::vector<glm::vec2> _glyphPositions;
+        std::vector<glm::vec3> _glyphPositions;
 
         void _SetupGlyphs(void);
 
